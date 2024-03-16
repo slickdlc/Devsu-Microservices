@@ -1,9 +1,9 @@
 package com.devsu.customer.application.usecase;
 
-import com.devsu.domain.exception.ServiceException;
-import com.devsu.domain.exception.UseCaseException;
-import com.devsu.domain.service.CustomerService;
-import com.devsu.domain.usecase.DeleteCustomerUseCase;
+import com.devsu.customer.domain.exception.ServiceException;
+import com.devsu.customer.domain.exception.UseCaseException;
+import com.devsu.customer.domain.service.CustomerService;
+import com.devsu.customer.domain.usecase.DeleteCustomerUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,6 @@
 package com.devsu.customer.infrastructure.entity;
 
 import com.devsu.CustomerMother;
-import com.devsu.customer.infrastructure.entity.CustomerEntity;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

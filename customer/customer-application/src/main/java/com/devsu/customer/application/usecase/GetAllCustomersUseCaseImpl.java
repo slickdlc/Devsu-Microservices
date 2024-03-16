@@ -2,11 +2,11 @@ package com.devsu.customer.application.usecase;
 
 import java.util.List;
 
-import com.devsu.domain.entity.Customer;
-import com.devsu.domain.exception.ServiceException;
-import com.devsu.domain.exception.UseCaseException;
-import com.devsu.domain.service.CustomerService;
-import com.devsu.domain.usecase.GetAllCustomersUseCase;
+import com.devsu.customer.domain.entity.Customer;
+import com.devsu.customer.domain.exception.ServiceException;
+import com.devsu.customer.domain.exception.UseCaseException;
+import com.devsu.customer.domain.service.CustomerService;
+import com.devsu.customer.domain.usecase.GetAllCustomersUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

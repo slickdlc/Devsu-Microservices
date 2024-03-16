@@ -1,6 +1,6 @@
 package com.devsu;
 
-import com.devsu.domain.entity.Customer;
+import com.devsu.customer.domain.entity.Customer;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

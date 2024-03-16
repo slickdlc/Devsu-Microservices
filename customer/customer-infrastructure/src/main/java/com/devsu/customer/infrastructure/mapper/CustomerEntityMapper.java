@@ -2,7 +2,7 @@ package com.devsu.customer.infrastructure.mapper;
 
 import java.util.List;
 
-import com.devsu.domain.entity.Customer;
+import com.devsu.customer.domain.entity.Customer;
 import com.devsu.customer.infrastructure.entity.CustomerEntity;
 import org.mapstruct.Mapper;
 

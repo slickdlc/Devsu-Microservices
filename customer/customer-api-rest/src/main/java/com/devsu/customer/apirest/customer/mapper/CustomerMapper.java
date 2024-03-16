@@ -5,7 +5,7 @@ import java.util.List;
 import com.devsu.customer.apirest.customer.dto.CustomerGenderEnumDto;
 import com.devsu.customer.apirest.customer.dto.CustomerRequestDto;
 import com.devsu.customer.apirest.customer.dto.CustomerResponseDto;
-import com.devsu.domain.entity.Customer;
+import com.devsu.customer.domain.entity.Customer;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

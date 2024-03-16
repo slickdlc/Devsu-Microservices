@@ -3,7 +3,7 @@ package com.devsu.customer.apirest.common.exception;
 import java.util.HashMap;
 
 import com.devsu.customer.apirest.common.dto.FailureMessageDto;
-import com.devsu.domain.exception.UseCaseException;
+import com.devsu.customer.domain.exception.UseCaseException;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;

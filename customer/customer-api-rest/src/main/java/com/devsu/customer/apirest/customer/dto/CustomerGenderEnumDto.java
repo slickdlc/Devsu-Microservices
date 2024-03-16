@@ -14,9 +14,9 @@ public enum CustomerGenderEnumDto {
   }
 
   public static CustomerGenderEnumDto fromString(final String value) {
-    if (value.equals("F")) {
+    if (value.equalsIgnoreCase("F")) {
       return FEMALE;
-    } else if (value.equals("M")) {
+    } else if (value.equalsIgnoreCase("M")) {
       return MALE;
     }
     throw new IllegalArgumentException("Invalid value");

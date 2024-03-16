@@ -7,9 +7,10 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.devsu.CustomerMother;
-import com.devsu.domain.exception.ServiceException;
-import com.devsu.domain.exception.UseCaseException;
-import com.devsu.domain.service.CustomerService;
+import com.devsu.customer.domain.exception.ServiceException;
+import com.devsu.customer.domain.exception.UseCaseException;
+import com.devsu.customer.domain.service.CustomerService;
+import com.devsu.customer.application.usecase.FindCustomerUseCaseImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

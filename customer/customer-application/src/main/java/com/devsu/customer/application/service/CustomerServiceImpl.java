@@ -2,10 +2,10 @@ package com.devsu.customer.application.service;
 
 import java.util.List;
 
-import com.devsu.domain.entity.Customer;
-import com.devsu.domain.exception.ServiceException;
-import com.devsu.domain.repository.CustomerRepository;
-import com.devsu.domain.service.CustomerService;
+import com.devsu.customer.domain.entity.Customer;
+import com.devsu.customer.domain.exception.ServiceException;
+import com.devsu.customer.domain.repository.CustomerRepository;
+import com.devsu.customer.domain.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

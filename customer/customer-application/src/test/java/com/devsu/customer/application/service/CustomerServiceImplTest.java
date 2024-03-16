@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.devsu.CustomerMother;
-import com.devsu.domain.exception.ServiceException;
-import com.devsu.domain.repository.CustomerRepository;
+import com.devsu.customer.domain.exception.ServiceException;
+import com.devsu.customer.domain.repository.CustomerRepository;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

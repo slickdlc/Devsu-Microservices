@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.devsu.customer.infrastructure.mapper.CustomerEntityMapper;
-import com.devsu.domain.entity.Customer;
-import com.devsu.domain.repository.CustomerRepository;
+import com.devsu.customer.domain.entity.Customer;
+import com.devsu.customer.domain.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.devsu.CustomerMother;
 import com.devsu.customer.config.ApplicationAbstractIT;
-import com.devsu.domain.entity.Customer;
-import com.devsu.domain.repository.CustomerRepository;
+import com.devsu.customer.domain.entity.Customer;
+import com.devsu.customer.domain.repository.CustomerRepository;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
