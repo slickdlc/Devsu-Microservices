@@ -36,25 +36,25 @@ public class CustomerRequestDtoMother {
         .build();
   }
 
-  public static CustomerRequestDto withIdentification(String identification) {
+  public static CustomerRequestDto withIdentification(final String identification) {
     return builder()
         .identification(identification)
         .build();
   }
 
-  public static CustomerRequestDto withAddress(String address) {
+  public static CustomerRequestDto withAddress(final String address) {
     return builder()
         .address(address)
         .build();
   }
 
-  public static CustomerRequestDto withPhone(String phone) {
+  public static CustomerRequestDto withPhone(final String phone) {
     return builder()
         .phone(phone)
         .build();
   }
 
-  public static CustomerRequestDto withPassword(String password) {
+  public static CustomerRequestDto withPassword(final String password) {
     return builder()
         .password(password)
         .build();

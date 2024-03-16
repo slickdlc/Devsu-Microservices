@@ -12,6 +12,6 @@ public interface CustomerJpaRepository extends CrudRepository<CustomerEntity, In
 
   List<CustomerEntity> findAll();
   
-  Optional<CustomerEntity> findByIdentification(String identification);
+  Optional<CustomerEntity> findByIdentification(final String identification);
   
 }

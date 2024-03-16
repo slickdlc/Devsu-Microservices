@@ -9,7 +9,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface CustomerEntityMapper {
 
-  CustomerEntity fromDomain(Customer customer);
+  CustomerEntity fromDomain(final Customer customer);
 
   Customer toDomain(CustomerEntity customerEntity);
 

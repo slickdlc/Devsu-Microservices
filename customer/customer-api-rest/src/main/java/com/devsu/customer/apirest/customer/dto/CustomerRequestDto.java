@@ -11,7 +11,7 @@ import static com.devsu.customer.apirest.customer.constants.CustomerValidationMe
 import static com.devsu.customer.apirest.customer.constants.CustomerValidationMessageConstants.PASSWORD_LENGTH_MESSAGE;
 import static com.devsu.customer.apirest.customer.constants.CustomerValidationMessageConstants.PHONE_LENGTH_MESSAGE;
 
-import com.devsu.customer.apirest.common.validator.CustomerGenderSubSet;
+import com.devsu.customer.apirest.common.validator.ValidCustomerGender;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -32,7 +32,7 @@ public class CustomerRequestDto {
   private String name;
 
   @NotNull(message = GENDER_IS_REQUIRED_MESSAGE)
-  @CustomerGenderSubSet(anyOf = {CustomerGenderEnumDto.FEMALE, CustomerGenderEnumDto.MALE}, message = GENDER_IS_REQUIRED_MESSAGE)
+  @ValidCustomerGender(anyOf = {CustomerGenderEnumDto.FEMALE, CustomerGenderEnumDto.MALE}, message = GENDER_IS_REQUIRED_MESSAGE)
   private String gender;
 
   @NotNull(message = AGE_MIN_MESSAGE)

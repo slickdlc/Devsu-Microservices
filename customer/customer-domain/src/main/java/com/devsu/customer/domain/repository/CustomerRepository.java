@@ -7,13 +7,13 @@ import com.devsu.customer.domain.entity.Customer;
 
 public interface CustomerRepository {
 
-  void saveCustomer(Customer customer);
+  void saveCustomer(final Customer customer);
 
-  void deleteCustomerById(Integer customerId);
+  void deleteCustomerById(final Integer customerId);
 
   List<Customer> readCustomers();
 
-  Optional<Customer> findCustomerById(Integer customerId);
+  Optional<Customer> findCustomerById(final Integer customerId);
 
-  Optional<Customer> findCustomerByIdentification(String identification);
+  Optional<Customer> findCustomerByIdentification(final String identification);
 }

@@ -4,5 +4,5 @@ import com.devsu.customer.domain.entity.Customer;
 
 public interface UpdateCustomerUseCase {
 
-  void handle(Customer customer);
+  void handle(final Customer customer);
 }

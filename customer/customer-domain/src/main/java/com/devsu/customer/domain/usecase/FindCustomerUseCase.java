@@ -4,5 +4,5 @@ import com.devsu.customer.domain.entity.Customer;
 
 public interface FindCustomerUseCase {
 
-  Customer handle(Integer id);
+  Customer handle(final Integer id);
 }

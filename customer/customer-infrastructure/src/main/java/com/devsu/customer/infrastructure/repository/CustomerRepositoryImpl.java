@@ -18,12 +18,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
   private final CustomerEntityMapper customerMapper;
 
   @Override
-  public void saveCustomer(Customer customer) {
+  public void saveCustomer(final Customer customer) {
     this.customerJpaRepository.save(this.customerMapper.fromDomain(customer));
   }
 
   @Override
-  public void deleteCustomerById(Integer customerId) {
+  public void deleteCustomerById(final Integer customerId) {
     this.customerJpaRepository.deleteById(customerId);
   }
 
@@ -33,12 +33,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
   }
 
   @Override
-  public Optional<Customer> findCustomerById(Integer customerId) {
+  public Optional<Customer> findCustomerById(final Integer customerId) {
     return this.customerJpaRepository.findById(customerId).map(this.customerMapper::toDomain);
   }
 
   @Override
-  public Optional<Customer> findCustomerByIdentification(String identification) {
+  public Optional<Customer> findCustomerByIdentification(final String identification) {
     return this.customerJpaRepository.findByIdentification(identification).map(this.customerMapper::toDomain);
   }
 }

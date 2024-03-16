@@ -19,8 +19,8 @@ import jakarta.validation.Payload;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 @Documented
-@Constraint(validatedBy = CustomerGenderSubSetValidator.class)
-public @interface CustomerGenderSubSet {
+@Constraint(validatedBy = CustomerGenderValidator.class)
+public @interface ValidCustomerGender {
 
   CustomerGenderEnumDto[] anyOf();
 

@@ -15,7 +15,7 @@ public interface CustomerMapper {
 
   List<CustomerResponseDto> fromDomain(List<Customer> customers);
 
-  CustomerResponseDto fromDomain(Customer customers);
+  CustomerResponseDto fromDomain(final Customer customers);
 
   @Mapping(target = "customerId", expression = "java(id)")
   @Mapping(target = "personId", ignore = true)

@@ -20,7 +20,7 @@ import org.junit.jupiter.api.TestFactory;
 public class Karate extends Runner.Builder<Karate> implements Iterable<DynamicNode> {
 
   // short cut for new Karate().path()
-  public static Karate run(String... paths) {
+  public static Karate run(final String... paths) {
     return new Karate().path(paths);
   }
 
