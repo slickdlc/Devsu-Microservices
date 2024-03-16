@@ -1,16 +1,15 @@
-package com.devsu.account.apirest.account.apirest.account.dto;
+package com.devsu.account.apirest.account.dto;
 
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.ACCOUNT_NUMBER_LENGTH_MESSAGE;
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.ACCOUNT_TYPE_IS_REQUIRED_MESSAGE;
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.ACTIVE_MESSAGE;
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.CUSTOMER_ID_MIN_MESSAGE;
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.INITIAL_BALANCE_VALUE_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.ACCOUNT_NUMBER_LENGTH_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.ACCOUNT_TYPE_IS_REQUIRED_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.ACTIVE_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.CUSTOMER_ID_MIN_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.INITIAL_BALANCE_VALUE_MESSAGE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
 import java.util.Set;
 
-import com.devsu.account.apirest.account.dto.AccountRequestDto;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;

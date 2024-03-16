@@ -1,4 +1,4 @@
-package com.devsu.account.apirest.account.apirest.account.controller;
+package com.devsu.account.apirest.account.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -11,9 +11,8 @@ import static org.mockito.Mockito.when;
 
 import java.util.List;
 
-import com.devsu.AccountMother;
-import com.devsu.account.apirest.account.apirest.account.dto.AccountRequestDtoMother;
-import com.devsu.account.apirest.account.controller.AccountController;
+import com.devsu.account.apirest.account.dto.AccountRequestDtoMother;
+import com.devsu.entity.AccountMother;
 import com.devsu.account.apirest.account.mapper.AccountMapperImpl;
 import com.devsu.domain.entity.Account;
 import com.devsu.domain.exception.UseCaseException;

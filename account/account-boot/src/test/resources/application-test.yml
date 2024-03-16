@@ -1,6 +1,14 @@
 spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/devsu
     username: root
     password: passw0rd
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+rest-service:
+  customer:
+    base-url: http://localhost:8060

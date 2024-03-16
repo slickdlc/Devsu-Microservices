@@ -1,4 +1,4 @@
-package com.devsu;
+package com.devsu.entity;
 
 import java.math.BigDecimal;
 
@@ -14,8 +14,6 @@ public class AccountMother {
 
   public static final Integer ACCOUNT_ID = 1;
 
-  public static final Integer CUSTOMER_ID = 1;
-
   public static final BigDecimal INITIAL_BALANCE = new BigDecimal(1000);
 
   public static final BigDecimal CURRENT_BALANCE = new BigDecimal(500);
@@ -25,7 +23,7 @@ public class AccountMother {
   public static Account.AccountBuilder builder() {
     return Account.builder()
         .accountId(ACCOUNT_ID)
-        .customerId(CUSTOMER_ID)
+        .customerId(CustomerMother.CUSTOMER_ID)
         .accountNumber(ACCOUNT_NUMBER)
         .accountType(ACCOUNT_TYPE)
         .initialBalance(INITIAL_BALANCE)
@@ -40,4 +38,9 @@ public class AccountMother {
   public static Account withAccountId(final Integer accountId) {
     return builder().accountId(accountId).build();
   }
+
+  public static Account withActive(final boolean active) {
+    return builder().active(active).build();
+  }
+
 }

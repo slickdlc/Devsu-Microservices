@@ -1,10 +1,11 @@
-package com.devsu.account.apirest.account.apirest.account.dto;
+package com.devsu.account.apirest.account.dto;
 
 import java.math.BigDecimal;
 
-import com.devsu.AccountMother;
+import com.devsu.entity.AccountMother;
 import com.devsu.account.apirest.account.dto.AccountRequestDto;
 import com.devsu.account.apirest.account.dto.AccountRequestDto.AccountRequestDtoBuilder;
+import com.devsu.entity.CustomerMother;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -12,7 +13,7 @@ public class AccountRequestDtoMother {
 
   public AccountRequestDtoBuilder builder() {
     return AccountRequestDto.builder()
-        .customerId(AccountMother.CUSTOMER_ID)
+        .customerId(CustomerMother.CUSTOMER_ID)
         .accountNumber(AccountMother.ACCOUNT_NUMBER)
         .accountType(AccountMother.ACCOUNT_TYPE)
         .initialBalance(AccountMother.INITIAL_BALANCE)
@@ -35,13 +36,13 @@ public class AccountRequestDtoMother {
         .build();
   }
 
-  public static AccountRequestDto accountNumber(String accountNumber) {
+  public static AccountRequestDto accountNumber(final String accountNumber) {
     return builder()
         .accountNumber(accountNumber)
         .build();
   }
 
-  public static AccountRequestDto withAccountType(String accountType) {
+  public static AccountRequestDto withAccountType(final String accountType) {
     return builder()
         .accountType(accountType)
         .build();

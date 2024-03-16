@@ -4,5 +4,5 @@ import com.devsu.domain.entity.Account;
 
 public interface FindAccountUseCase {
 
-  Account handle(Integer id);
+  Account handle(final Integer id);
 }

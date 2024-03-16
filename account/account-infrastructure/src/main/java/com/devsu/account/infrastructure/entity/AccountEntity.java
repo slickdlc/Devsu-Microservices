@@ -1,6 +1,7 @@
 package com.devsu.account.infrastructure.entity;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,11 +9,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Builder
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -33,4 +34,7 @@ public class AccountEntity {
   private BigDecimal currentBalance;
 
   private boolean active;
+  
+  //Audit
+  private Instant updatedAt;
 }

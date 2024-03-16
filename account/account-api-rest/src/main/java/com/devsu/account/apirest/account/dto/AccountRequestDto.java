@@ -1,14 +1,14 @@
 package com.devsu.account.apirest.account.dto;
 
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.ACCOUNT_NUMBER_LENGTH_MESSAGE;
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.ACCOUNT_TYPE_IS_REQUIRED_MESSAGE;
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.ACTIVE_MESSAGE;
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.CUSTOMER_ID_MIN_MESSAGE;
-import static com.devsu.account.apirest.account.constants.AccountValidationMessageConstants.INITIAL_BALANCE_VALUE_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.ACCOUNT_NUMBER_LENGTH_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.ACCOUNT_TYPE_IS_REQUIRED_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.ACTIVE_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.CUSTOMER_ID_MIN_MESSAGE;
+import static com.devsu.account.apirest.account.validator.AccountValidationMessageConstants.INITIAL_BALANCE_VALUE_MESSAGE;
 
 import java.math.BigDecimal;
 
-import com.devsu.account.apirest.common.validator.AccountTypeSubSet;
+import com.devsu.account.apirest.account.validator.AccountTypeSubSet;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;

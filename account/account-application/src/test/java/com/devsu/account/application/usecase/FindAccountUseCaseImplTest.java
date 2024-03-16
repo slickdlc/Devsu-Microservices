@@ -6,7 +6,7 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.devsu.AccountMother;
+import com.devsu.entity.AccountMother;
 import com.devsu.domain.exception.ServiceException;
 import com.devsu.domain.exception.UseCaseException;
 import com.devsu.domain.service.AccountService;

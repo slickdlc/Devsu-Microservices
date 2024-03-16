@@ -1,9 +1,11 @@
 use devsu;
-create table account_entity_seq (next_val bigint) engine=InnoDB;
-insert into account_entity_seq values ( 10 );
-create table account_entity (account_id integer not null, address varchar(50), age integer, gender varchar(1), accountNumber varchar(8), name varchar(50), phone varchar(9), active bit not null, password varchar(40), primary key (account_id)) engine=InnoDB;
-alter table account_entity add constraint UK__nkj8yqiw2jffsunv4myman79s unique (accountNumber);
-
+create table account_entity_seq (next_val bigint) engine=InnoDB
+insert into account_entity_seq values ( 20 )
+create table account_entity (account_id integer not null, account_number varchar(16), account_type varchar(20), active bit not null, current_balance decimal(38,2), customer_id integer, initial_balance decimal(38,2), updated_at datetime(6), primary key (account_id)) engine=InnoDB
+create table movement_entity_seq (next_val bigint) engine=InnoDB
+insert into movement_entity_seq values ( 20 )
+create table movement_entity (movement_id integer not null, created_at datetime(6), initial_balance decimal(38,2), movement_type varchar(20), timestamp datetime(6), value decimal(38,2), account_account_id integer, primary key (movement_id)) engine=InnoDB
+alter table movement_entity add constraint FK4edjqj8vgmfrgsvxrsin43dpp foreign key (account_account_id) references account_entity (account_id);
 -- Integration Tests Data:
 
 -- List of accounts || Find By ID

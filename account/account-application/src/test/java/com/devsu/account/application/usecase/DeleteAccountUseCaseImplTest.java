@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 
-import com.devsu.AccountMother;
+import com.devsu.entity.AccountMother;
 import com.devsu.domain.exception.ServiceException;
 import com.devsu.domain.exception.UseCaseException;
 import com.devsu.domain.service.AccountService;

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.math.BigDecimal;
 
-import com.devsu.AccountMother;
+import com.devsu.entity.AccountMother;
 import com.devsu.account.config.ApplicationAbstractIT;
 import com.devsu.domain.entity.Account;
 import com.devsu.domain.repository.AccountRepository;
@@ -88,11 +88,11 @@ public class AccountRepositoryIT extends ApplicationAbstractIT {
 
     @Test
     void given_validAccountId_when_deleteAccount_then_accountIsDeleted() {
-      final var accountBeforeDelete = AccountRepositoryIT.this.accountRepository.findAccountById(ACCOUNT_ID_TO_DELETE);
+      final var accountBeforeDelete = AccountRepositoryIT.this.accountRepository.findByAccountId(ACCOUNT_ID_TO_DELETE);
 
       AccountRepositoryIT.this.accountRepository.deleteAccountById(ACCOUNT_ID_TO_DELETE);
 
-      final var accountDeleted = AccountRepositoryIT.this.accountRepository.findAccountById(ACCOUNT_ID_TO_DELETE);
+      final var accountDeleted = AccountRepositoryIT.this.accountRepository.findByAccountId(ACCOUNT_ID_TO_DELETE);
 
       assertNotNull(accountBeforeDelete);
       assertTrue(accountBeforeDelete.isPresent());
@@ -122,7 +122,7 @@ public class AccountRepositoryIT extends ApplicationAbstractIT {
 
     @Test
     void given_idThatExists_when_findAccountById_then_returnAccounts() {
-      final var account = AccountRepositoryIT.this.accountRepository.findAccountById(ACCOUNT_ID_THAT_EXISTS);
+      final var account = AccountRepositoryIT.this.accountRepository.findByAccountId(ACCOUNT_ID_THAT_EXISTS);
 
       assertNotNull(account);
       assertTrue(account.isPresent());

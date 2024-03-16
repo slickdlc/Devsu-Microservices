@@ -1,4 +1,4 @@
-package com.devsu.account.apirest.common.validator;
+package com.devsu.account.apirest.account.validator;
 
 import java.util.Arrays;
 
@@ -16,7 +16,7 @@ public class AccountTypeSubSetValidator implements ConstraintValidator<AccountTy
   }
 
   @Override
-  public boolean isValid(String value, ConstraintValidatorContext context) {
+  public boolean isValid(final String value, ConstraintValidatorContext context) {
     return value == null || Arrays.asList(subset).contains(value);
   }
 }

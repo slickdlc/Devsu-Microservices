@@ -15,7 +15,7 @@ public interface AccountMapper {
 
   List<AccountResponseDto> fromDomain(List<Account> accounts);
 
-  AccountResponseDto fromDomain(Account accounts);
+  AccountResponseDto fromDomain(final Account accounts);
 
   @Mapping(target = "accountId", expression = "java(id)")
   @Mapping(target = "currentBalance", ignore = true)

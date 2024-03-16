@@ -10,9 +10,10 @@ import static org.mockito.Mockito.when;
 import java.util.List;
 import java.util.Optional;
 
-import com.devsu.AccountMother;
 import com.devsu.domain.exception.ServiceException;
 import com.devsu.domain.repository.AccountRepository;
+import com.devsu.domain.repository.CustomerRepository;
+import com.devsu.entity.AccountMother;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,15 +30,31 @@ class AccountServiceImplTest {
   @Mock
   private AccountRepository accountRepository;
 
+  @Mock
+  private CustomerRepository customerRepository;
+
   @Nested
   class CreateAccount {
 
     @Test
-    void given_accountWithId_when_createAccount_then_expectedException() {
+    void given_accountWithId_when_createAccount_then_throwIllegalArgumentException() {
       final var account = AccountMother.complete();
+
+      assertThrows(IllegalArgumentException.class, () -> AccountServiceImplTest.this.accountService.createAccount(account));
+
+      verify(AccountServiceImplTest.this.accountRepository, never()).findByAccountNumber(account.getAccountNumber());
+      verify(AccountServiceImplTest.this.accountRepository, never()).saveAccount(account);
+    }
+
+    @Test
+    void given_inactiveCustomerId_when_createAccount_then_throwServiceException() {
+      final var account = AccountMother.withAccountId(null);
+
+      when(AccountServiceImplTest.this.customerRepository.existsActiveCustomer(account.getCustomerId())).thenReturn(false);
 
       assertThrows(ServiceException.class, () -> AccountServiceImplTest.this.accountService.createAccount(account));
 
+      verify(AccountServiceImplTest.this.customerRepository).existsActiveCustomer(account.getCustomerId());
       verify(AccountServiceImplTest.this.accountRepository, never()).findByAccountNumber(account.getAccountNumber());
       verify(AccountServiceImplTest.this.accountRepository, never()).saveAccount(account);
     }
@@ -48,6 +65,7 @@ class AccountServiceImplTest {
 
       when(AccountServiceImplTest.this.accountRepository.findByAccountNumber(account.getAccountNumber())).thenReturn(
           Optional.of(AccountMother.complete()));
+      when(AccountServiceImplTest.this.customerRepository.existsActiveCustomer(account.getCustomerId())).thenReturn(true);
 
       assertThrows(ServiceException.class, () -> AccountServiceImplTest.this.accountService.createAccount(account));
 
@@ -61,6 +79,7 @@ class AccountServiceImplTest {
 
       when(AccountServiceImplTest.this.accountRepository.findByAccountNumber(account.getAccountNumber())).thenReturn(
           Optional.empty());
+      when(AccountServiceImplTest.this.customerRepository.existsActiveCustomer(account.getCustomerId())).thenReturn(true);
 
       AccountServiceImplTest.this.accountService.createAccount(account);
 
@@ -76,43 +95,61 @@ class AccountServiceImplTest {
     void given_accountWithIdThatDoesNotExists_when_updateAccount_then_expectedException() {
       final var account = AccountMother.withAccountId(9999);
 
-      when(AccountServiceImplTest.this.accountRepository.findAccountById(account.getAccountId())).thenReturn(Optional.empty());
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(account.getAccountId())).thenReturn(Optional.empty());
 
       assertThrows(ServiceException.class, () -> AccountServiceImplTest.this.accountService.updateAccount(account));
 
-      verify(AccountServiceImplTest.this.accountRepository).findAccountById(account.getAccountId());
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(account.getAccountId());
+      verify(AccountServiceImplTest.this.accountRepository, never()).findByAccountNumber(account.getAccountNumber());
+      verify(AccountServiceImplTest.this.accountRepository, never()).saveAccount(account);
+    }
+
+    @Test
+    void given_inactiveCustomerId_when_updateAccount_then_throwServiceException() {
+      final var account = AccountMother.complete();
+
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(account.getAccountId())).thenReturn(
+          Optional.of(AccountMother.complete()));
+      when(AccountServiceImplTest.this.customerRepository.existsActiveCustomer(account.getCustomerId())).thenReturn(false);
+
+      assertThrows(ServiceException.class, () -> AccountServiceImplTest.this.accountService.updateAccount(account));
+
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(account.getAccountId());
+      verify(AccountServiceImplTest.this.customerRepository).existsActiveCustomer(account.getCustomerId());
       verify(AccountServiceImplTest.this.accountRepository, never()).findByAccountNumber(account.getAccountNumber());
       verify(AccountServiceImplTest.this.accountRepository, never()).saveAccount(account);
     }
 
     @Test
     void given_accountWithAccountNumberThatExists_when_updateAccount_then_expectedException() {
-      final var account = AccountMother.withAccountId(null);
+      final var account = AccountMother.complete();
 
-      when(AccountServiceImplTest.this.accountRepository.findAccountById(account.getAccountId())).thenReturn(
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(account.getAccountId())).thenReturn(
           Optional.of(AccountMother.complete()));
       when(AccountServiceImplTest.this.accountRepository.findByAccountNumber(account.getAccountNumber())).thenReturn(
-          Optional.of(AccountMother.complete()));
+          Optional.of(AccountMother.withAccountId(AccountMother.ACCOUNT_ID + 1)));
+      when(AccountServiceImplTest.this.customerRepository.existsActiveCustomer(account.getCustomerId())).thenReturn(true);
 
       assertThrows(ServiceException.class, () -> AccountServiceImplTest.this.accountService.updateAccount(account));
 
-      verify(AccountServiceImplTest.this.accountRepository).findAccountById(account.getAccountId());
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(account.getAccountId());
       verify(AccountServiceImplTest.this.accountRepository).findByAccountNumber(account.getAccountNumber());
       verify(AccountServiceImplTest.this.accountRepository, never()).saveAccount(account);
     }
 
     @Test
     void given_positiveCase_when_updateAccount_then_accountIsUpdated() {
-      final var account = AccountMother.withAccountId(null);
+      final var account = AccountMother.complete();
 
-      when(AccountServiceImplTest.this.accountRepository.findAccountById(account.getAccountId())).thenReturn(
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(account.getAccountId())).thenReturn(
           Optional.of(AccountMother.complete()));
       when(AccountServiceImplTest.this.accountRepository.findByAccountNumber(account.getAccountNumber())).thenReturn(
           Optional.empty());
+      when(AccountServiceImplTest.this.customerRepository.existsActiveCustomer(account.getCustomerId())).thenReturn(true);
 
       AccountServiceImplTest.this.accountService.updateAccount(account);
 
-      verify(AccountServiceImplTest.this.accountRepository).findAccountById(account.getAccountId());
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(account.getAccountId());
       verify(AccountServiceImplTest.this.accountRepository).findByAccountNumber(account.getAccountNumber());
       verify(AccountServiceImplTest.this.accountRepository).saveAccount(account);
     }
@@ -123,22 +160,22 @@ class AccountServiceImplTest {
 
     @Test
     void given_accountIdThatNotExists_when_deleteAccount_then_expectedException() {
-      when(AccountServiceImplTest.this.accountRepository.findAccountById(AccountMother.ACCOUNT_ID)).thenReturn(Optional.empty());
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(AccountMother.ACCOUNT_ID)).thenReturn(Optional.empty());
 
       assertThrows(ServiceException.class, () -> AccountServiceImplTest.this.accountService.deleteAccount(AccountMother.ACCOUNT_ID));
 
-      verify(AccountServiceImplTest.this.accountRepository).findAccountById(AccountMother.ACCOUNT_ID);
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(AccountMother.ACCOUNT_ID);
       verify(AccountServiceImplTest.this.accountRepository, never()).deleteAccountById(AccountMother.ACCOUNT_ID);
     }
 
     @Test
     void given_positiveCase_when_deleteAccount_then_accountIsDeleted() {
-      when(AccountServiceImplTest.this.accountRepository.findAccountById(AccountMother.ACCOUNT_ID)).thenReturn(
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(AccountMother.ACCOUNT_ID)).thenReturn(
           Optional.of(AccountMother.complete()));
 
       AccountServiceImplTest.this.accountService.deleteAccount(AccountMother.ACCOUNT_ID);
 
-      verify(AccountServiceImplTest.this.accountRepository).findAccountById(AccountMother.ACCOUNT_ID);
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(AccountMother.ACCOUNT_ID);
       verify(AccountServiceImplTest.this.accountRepository).deleteAccountById(AccountMother.ACCOUNT_ID);
     }
   }
@@ -164,23 +201,23 @@ class AccountServiceImplTest {
 
     @Test
     void given_accountIdThatNotExists_when_getAccountById_then_expectedException() {
-      when(AccountServiceImplTest.this.accountRepository.findAccountById(AccountMother.ACCOUNT_ID)).thenReturn(Optional.empty());
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(AccountMother.ACCOUNT_ID)).thenReturn(Optional.empty());
 
       assertThrows(ServiceException.class, () -> AccountServiceImplTest.this.accountService.getAccountById(AccountMother.ACCOUNT_ID));
 
-      verify(AccountServiceImplTest.this.accountRepository).findAccountById(AccountMother.ACCOUNT_ID);
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(AccountMother.ACCOUNT_ID);
     }
 
     @Test
     void given_positiveCase_when_getAccountById_then_expectedAccount() {
-      when(AccountServiceImplTest.this.accountRepository.findAccountById(AccountMother.ACCOUNT_ID)).thenReturn(
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(AccountMother.ACCOUNT_ID)).thenReturn(
           Optional.of(AccountMother.complete()));
 
       final var result = AccountServiceImplTest.this.accountService.getAccountById(AccountMother.ACCOUNT_ID);
 
       assertNotNull(result);
       assertEquals(AccountMother.complete(), result);
-      verify(AccountServiceImplTest.this.accountRepository).findAccountById(AccountMother.ACCOUNT_ID);
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(AccountMother.ACCOUNT_ID);
     }
   }
 }

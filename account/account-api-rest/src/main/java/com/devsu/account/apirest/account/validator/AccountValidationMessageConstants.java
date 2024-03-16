@@ -1,4 +1,4 @@
-package com.devsu.account.apirest.account.constants;
+package com.devsu.account.apirest.account.validator;
 
 import lombok.experimental.UtilityClass;
 

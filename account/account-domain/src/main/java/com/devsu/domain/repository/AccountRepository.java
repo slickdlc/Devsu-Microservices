@@ -7,13 +7,16 @@ import com.devsu.domain.entity.Account;
 
 public interface AccountRepository {
 
-  void saveAccount(Account account);
+  void saveAccount(final Account account);
 
-  void deleteAccountById(Integer accountId);
+  void deleteAccountById(final Integer accountId);
 
   List<Account> readAccounts();
 
-  Optional<Account> findAccountById(Integer accountId);
+  Optional<Account> findByAccountId(final Integer accountId);
 
-  Optional<Account> findByAccountNumber(String accountNumber);
+  Optional<Account> findByAccountNumber(final String accountNumber);
+
+  List<Integer> findActiveAccountIds(final Integer customerId);
+
 }

@@ -8,7 +8,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.List;
 
-import com.devsu.AccountMother;
+import com.devsu.entity.AccountMother;
 import com.devsu.domain.exception.ServiceException;
 import com.devsu.domain.exception.UseCaseException;
 import com.devsu.domain.service.AccountService;

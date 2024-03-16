@@ -11,7 +11,9 @@ import org.springframework.stereotype.Repository;
 public interface AccountJpaRepository extends CrudRepository<AccountEntity, Integer> {
 
   List<AccountEntity> findAll();
-  
-  Optional<AccountEntity> findByAccountNumber(String accountNumber);
-  
+
+  Optional<AccountEntity> findByAccountNumber(final String accountNumber);
+
+  List<AccountEntity> findAllByCustomerId(final Integer customerId);
+
 }

@@ -3,6 +3,7 @@ package com.devsu.account.infrastructure.repository;
 import java.util.List;
 import java.util.Optional;
 
+import com.devsu.account.infrastructure.entity.AccountEntity;
 import com.devsu.account.infrastructure.mapper.AccountEntityMapper;
 import com.devsu.domain.entity.Account;
 import com.devsu.domain.repository.AccountRepository;
@@ -18,12 +19,12 @@ public class AccountRepositoryImpl implements AccountRepository {
   private final AccountEntityMapper accountMapper;
 
   @Override
-  public void saveAccount(Account account) {
+  public void saveAccount(final Account account) {
     this.accountJpaRepository.save(this.accountMapper.fromDomain(account));
   }
 
   @Override
-  public void deleteAccountById(Integer accountId) {
+  public void deleteAccountById(final Integer accountId) {
     this.accountJpaRepository.deleteById(accountId);
   }
 
@@ -33,12 +34,21 @@ public class AccountRepositoryImpl implements AccountRepository {
   }
 
   @Override
-  public Optional<Account> findAccountById(Integer accountId) {
+  public Optional<Account> findByAccountId(final Integer accountId) {
     return this.accountJpaRepository.findById(accountId).map(this.accountMapper::toDomain);
   }
 
   @Override
-  public Optional<Account> findByAccountNumber(String accountNumber) {
+  public Optional<Account> findByAccountNumber(final String accountNumber) {
     return this.accountJpaRepository.findByAccountNumber(accountNumber).map(this.accountMapper::toDomain);
   }
+
+  @Override
+  public List<Integer> findActiveAccountIds(final Integer customerId) {
+    return this.accountJpaRepository.findAllByCustomerId(customerId).stream()
+        .filter(AccountEntity::isActive)
+        .map(AccountEntity::getAccountId)
+        .toList();
+  }
+
 }

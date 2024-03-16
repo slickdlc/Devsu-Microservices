@@ -2,5 +2,5 @@ package com.devsu.domain.usecase;
 
 public interface DeleteAccountUseCase {
 
-    void handle(Integer id);
+    void handle(final Integer id);
 }
