@@ -1,0 +1,4 @@
+urls:
+  customerUrl: 'http://localhost:8060'
+  movementsUrl: 'http://localhost:8061'
+  

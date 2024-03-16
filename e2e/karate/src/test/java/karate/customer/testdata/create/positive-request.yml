@@ -1,0 +1,15 @@
+path: customer
+body: {
+  "name": "Hans Burg De La Cruz Acosta",
+  "password": "secretpassw0rd",
+  "address": "Av. 28 de Julio #1999",
+  "identification": "01010101",
+  "phone": "959825887",
+  "active": true,
+  "gender": "M",
+  "age": 26
+}
+statusCode: 200
+expectedResponse: {
+  "message": "Customer created successfully"
+}

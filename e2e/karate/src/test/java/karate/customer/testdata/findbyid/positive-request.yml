@@ -1,0 +1,14 @@
+path: customer/1
+body: { }
+statusCode: 200
+expectedResponse: {
+  "customerId": 1,
+  "name": "Hans De La Cruz Acosta",
+  "gender": "M",
+  "age": 26,
+  "identification": "71717171",
+  "address": "Av. 28 de Julio #1999",
+  "phone": "959825887",
+  "password": "passw0rd",
+  "active": true
+}

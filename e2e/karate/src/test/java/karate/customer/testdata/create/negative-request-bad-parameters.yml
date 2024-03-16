@@ -1,0 +1,14 @@
+path: customer
+body: {
+}
+statusCode: 400
+expectedResponse: {
+  "password": "Password must contain between 8 and 40 characters",
+  "identification": "Identification must contain 8 characters",
+  "address": "Address must contain between 1 and 50 characters",
+  "gender": "Gender must be 'F' or 'M'",
+  "phone": "Phone must contain 9 characters",
+  "name": "Name is required",
+  "active": "Active must be informed",
+  "age": "Age should not be less than 1"
+}

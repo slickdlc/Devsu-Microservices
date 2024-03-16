@@ -1,0 +1,6 @@
+path: customer/999
+body: { }
+statusCode: 404
+expectedResponse: {
+  "message": "Customer with id [999] not found"
+}

@@ -1,0 +1,15 @@
+path: customer/999
+body: {
+  "name": "Hans Burg De La Cruz Acosta",
+  "password": "secretpassw0rd",
+  "address": "Av. 28 de Julio #1999",
+  "identification": "71717171",
+  "phone": "959825887",
+  "active": true,
+  "gender": "M",
+  "age": 26
+}
+statusCode: 404
+expectedResponse: {
+  "message": "Customer with id [999] not found"
+}
