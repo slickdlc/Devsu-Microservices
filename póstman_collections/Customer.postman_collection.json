@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "6a088bf9-c6fe-47ea-85f0-6587162400c6",
+		"name": "Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24085295",
+		"_collection_link": "https://bold-trinity-794168.postman.co/workspace/Devsu~9d504339-2308-4173-8d17-f5a19e58ebbe/collection/24085295-6a088bf9-c6fe-47ea-85f0-6587162400c6?action=share&source=collection_link&creator=24085295"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Hans Burg De La Cruz Acosta\",\r\n  \"contrasena\": \"secretpassw0rd\",\r\n  \"direccion\": \"Av. 28 de Julio #1999\",\r\n  \"identificacion\": \"71717289\",\r\n  \"telefono\": \"959825887\",\r\n  \"activo\": true,\r\n  \"genero\": \"M\",\r\n  \"edad\": 26\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Hans Burg De La Cruz Acosta\",\r\n  \"contrasena\": \"secretpassw0rd\",\r\n  \"direccion\": \"Av. 28 de Julio #1999\",\r\n  \"identificacion\": \"71717171\",\r\n  \"telefono\": \"959825887\",\r\n  \"activo\": true,\r\n  \"genero\": \"M\",\r\n  \"edad\": 26\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Otro nombre\",\r\n  \"contrasena\": \"secretpassw0rd\",\r\n  \"direccion\": \"otra dirección\",\r\n  \"identificacion\": \"00000000\",\r\n  \"telefono\": \"999999999\",\r\n  \"genero\": \"F\",\r\n  \"edad\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:8060/clientes",
+			"type": "string"
+		}
+	]
+}
