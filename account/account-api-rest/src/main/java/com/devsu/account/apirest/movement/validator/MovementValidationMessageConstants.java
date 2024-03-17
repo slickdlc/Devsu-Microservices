@@ -22,5 +22,7 @@ public class MovementValidationMessageConstants {
   public static final String VALID_END_DATE_MESSAGE = "La fecha de fin es obligatoria";
 
   public static final String VALID_DATE_RANGE_MESSAGE = "La fecha de inicio debe ser antes que la fecha de fin";
+  
+  public static final String VALID_DATE_FORMAT_MESSAGE = "La fecha y hora del movimiento debe tener el formato yyyy-MM-dd HH:mm:ss";
 
 }

@@ -27,7 +27,7 @@ Feature: Movement Get Account Statement API
     And request req.body
     And param fechaInicio = "01/03/2024"
     And param fechaFin = "30/04/2024"
-    And param clienteIdentification = "71717167"
+    And param clienteIdentificacion = "71717167"
     When method GET
 
     * match responseStatus == req.statusCode

@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2024-03-16 10:54:54 p. m.</div>
+    <div>2024-03-17 01:48:33 a. m.</div>
   </div>
 </div>
 
@@ -81,7 +81,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>32</span>
+              <span>ms:</span>&nbsp;<span>36</span>
             </div>
           </div>
           <div class="step-row">
@@ -104,7 +104,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def accountGet = read(&#39;classpath:apis/karate/account/request/account-get.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -160,7 +160,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def response = call accountGet req</span>
       </div>
     </div>
-    <div class="time-cell passed">27</div>
+    <div class="time-cell passed">31</div>
   </div>
 
    
@@ -179,7 +179,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.account.request.account-get</div>
       </div>
-      <div class="time-cell passed">20</div>
+      <div class="time-cell passed">19</div>
     </div>
     <div>
       <div><div>
@@ -307,7 +307,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">18</div>
+    <div class="time-cell passed">16</div>
   </div>
 
    
@@ -316,7 +316,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8.0.call.0.9">22:54:54.106 request:
+  <div class="preformatted" data-parent="0.8.0.call.0.9">01:48:33.876 request:
 1 &gt; GET http://localhost:8061/cuentas
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
@@ -326,14 +326,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:54.122 response time in milliseconds: 15
+01:48:33.890 response time in milliseconds: 13
 1 &lt; 200
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:53 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:33 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
-[{&quot;accountId&quot;:-27,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;9876987698769876&quot;,&quot;accountType&quot;:&quot;Corriente&quot;,&quot;currentBalance&quot;:0.9993450000,&quot;active&quot;:true},{&quot;accountId&quot;:1,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;1234567812345678&quot;,&quot;accountType&quot;:&quot;Ahorros&quot;,&quot;currentBalance&quot;:1000000.0000000000,&quot;active&quot;:true},{&quot;accountId&quot;:3,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;1234567812345680&quot;,&quot;accountType&quot;:&quot;Ahorros&quot;,&quot;currentBalance&quot;:150.9500000000,&quot;active&quot;:true},{&quot;accountId&quot;:4,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;1234567812345681&quot;,&quot;accountType&quot;:&quot;Ahorros&quot;,&quot;currentBalance&quot;:150.9500000000,&quot;active&quot;:true},{&quot;accountId&quot;:5,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;1234567812345682&quot;,&quot;accountType&quot;:&quot;Ahorros&quot;,&quot;currentBalance&quot;:150.9500000000,&quot;active&quot;:true},{&quot;accountId&quot;:6,&quot;customerId&quot;:5,&quot;accountNumber&quot;:&quot;1234567812345683&quot;,&quot;accountType&quot;:&quot;Corriente&quot;,&quot;currentBalance&quot;:246.7200000000,&quot;active&quot;:true},{&quot;accountId&quot;:7,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;1234567812345684&quot;,&quot;accountType&quot;:&quot;Ahorros&quot;,&quot;currentBalance&quot;:150.9500000000,&quot;active&quot;:false}]
+[{&quot;cuentaId&quot;:1,&quot;clienteId&quot;:1,&quot;numeroDeCuenta&quot;:&quot;1234567812345678&quot;,&quot;tipoDeCuenta&quot;:&quot;Ahorros&quot;,&quot;saldoActual&quot;:1000000.0000000000,&quot;activo&quot;:true},{&quot;cuentaId&quot;:3,&quot;clienteId&quot;:1,&quot;numeroDeCuenta&quot;:&quot;1234567812345680&quot;,&quot;tipoDeCuenta&quot;:&quot;Ahorros&quot;,&quot;saldoActual&quot;:150.9500000000,&quot;activo&quot;:true},{&quot;cuentaId&quot;:4,&quot;clienteId&quot;:1,&quot;numeroDeCuenta&quot;:&quot;1234567812345681&quot;,&quot;tipoDeCuenta&quot;:&quot;Ahorros&quot;,&quot;saldoActual&quot;:150.9500000000,&quot;activo&quot;:true},{&quot;cuentaId&quot;:5,&quot;clienteId&quot;:1,&quot;numeroDeCuenta&quot;:&quot;1234567812345682&quot;,&quot;tipoDeCuenta&quot;:&quot;Ahorros&quot;,&quot;saldoActual&quot;:150.9500000000,&quot;activo&quot;:true},{&quot;cuentaId&quot;:6,&quot;clienteId&quot;:5,&quot;numeroDeCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipoDeCuenta&quot;:&quot;Corriente&quot;,&quot;saldoActual&quot;:246.7200000000,&quot;activo&quot;:true},{&quot;cuentaId&quot;:7,&quot;clienteId&quot;:1,&quot;numeroDeCuenta&quot;:&quot;1234567812345684&quot;,&quot;tipoDeCuenta&quot;:&quot;Ahorros&quot;,&quot;saldoActual&quot;:150.9500000000,&quot;activo&quot;:false},{&quot;cuentaId&quot;:8,&quot;clienteId&quot;:1,&quot;numeroDeCuenta&quot;:&quot;9876987698769876&quot;,&quot;tipoDeCuenta&quot;:&quot;Corriente&quot;,&quot;saldoActual&quot;:0.9993450000,&quot;activo&quot;:true}]
 
 </div>   
 
@@ -354,7 +354,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedStatusCode = req.statusCode || responseStatus</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    

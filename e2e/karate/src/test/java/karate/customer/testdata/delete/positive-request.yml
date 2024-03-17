@@ -2,5 +2,5 @@ path: clientes/2
 body: { }
 statusCode: 200
 expectedResponse: {
-  "message": "Customer deleted successfully"
+  "message": "El cliente ha sido eliminado satisfactoriamente"
 }

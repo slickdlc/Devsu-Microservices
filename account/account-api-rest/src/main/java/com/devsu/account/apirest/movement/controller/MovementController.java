@@ -50,15 +50,16 @@ public class MovementController extends BaseController {
       @RequestParam("fechaFin") @DateTimeFormat(pattern = "dd/MM/yyyy") final LocalDate endDate,
       @RequestParam(value = "clienteId", required = false) final Integer customerId,
       @RequestParam(value = "clienteIdentificacion", required = false) final String customerIdentification) {
+    return this.dotAccountStatement(this.getValidRequest(startDate, endDate, customerId, customerIdentification));
+  }
 
+  public ResponseEntity<List<MovementByCustomerResponseDto>> dotAccountStatement(@Valid final MovementsByCustomerRequestDto requestDto) {
     return ok(
         this.movementMapper.fromDomain(
             this.getMovementsUseCase.handle(
-                this.movementMapper.toDomain(
-                    this.getValidRequest(startDate, endDate, customerId, customerIdentification)))));
+                this.movementMapper.toDomain(requestDto))));
   }
 
-  @Valid
   private MovementsByCustomerRequestDto getValidRequest(final LocalDate startDate,
       final LocalDate endDate, final Integer customerId, final String customerIdentification) {
     return MovementsByCustomerRequestDto.builder().startDate(startDate).endDate(endDate)

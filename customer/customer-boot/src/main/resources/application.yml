@@ -1,8 +1,3 @@
 spring:
-  datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/devsu
-    username: root
-    password: passw0rd
-    driver-class-name: com.mysql.cj.jdbc.Driver
-server:
-  port: 8060
+  profiles:
+    active: local

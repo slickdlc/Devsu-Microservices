@@ -3,9 +3,9 @@ body: {
 }
 statusCode: 400
 expectedResponse: {
-  "initialBalance": "Initial balance must be greater than or equal to 0",
-  "accountType": "Account type must be 'Corriente' or 'Ahorros'",
-  "customerId": "Customer Id should not be less than 1",
-  "active": "Active must be informed",
-  "accountNumber": "Account number must contain 16 digits"
+  "numeroDeCuenta": "El número de cuenta debe tener 16 dígitos",
+  "clienteId": "El id del cliente no debe ser menor que 1",
+  "tipoDeCuenta": "El tipo de cuenta tiene que ser o 'Corriente' o 'Ahorros'",
+  "saldoInicial": "El saldo inicial debe ser mayor o igual que 0.0",
+  "activo": "El campo activo es obligatorio"
 }

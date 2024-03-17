@@ -2,6 +2,8 @@ package com.devsu.account.application.service;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +24,11 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MovementServiceImpl implements MovementService {
+
+  private static final String PATTERN_FORMAT = "dd/MM/yyyy HH:mm:ss";
+
+  private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(PATTERN_FORMAT)
+      .withZone(ZoneId.systemDefault());
 
   private final MovementRepository movementRepository;
 
@@ -73,7 +80,7 @@ public class MovementServiceImpl implements MovementService {
     if (lastMovementTimestamp != null && movement.getTimestamp().isBefore(lastMovementTimestamp)) {
       throw new ServiceException(HttpStatus.BAD_REQUEST,
           String.format("La fecha de la transacción no puede ser anterior a la última transacción. Ultima transacción [%s]",
-              lastMovementTimestamp));
+              FORMATTER.format(lastMovementTimestamp)));
     }
   }
 

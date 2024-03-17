@@ -1,7 +1,5 @@
 use devsu;
-create table customer_entity_seq (next_val bigint) engine=InnoDB;
-insert into customer_entity_seq values ( 10 );
-create table customer_entity (customer_id integer not null, address varchar(50), age integer, gender varchar(1), identification varchar(8), name varchar(50), phone varchar(9), active bit not null, password varchar(40), primary key (customer_id)) engine=InnoDB;
+create table customer_entity (customer_id integer not null auto_increment, address varchar(255), age integer, gender varchar(255), identification varchar(255), name varchar(255), phone varchar(255), active bit not null, password varchar(255), primary key (customer_id)) engine=InnoDB;
 alter table customer_entity add constraint UK__nkj8yqiw2jffsunv4myman79s unique (identification);
 
 -- Integration Tests Data:

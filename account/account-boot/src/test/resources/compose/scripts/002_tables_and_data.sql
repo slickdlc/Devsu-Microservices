@@ -1,12 +1,9 @@
 use devsu;
-create table account_entity_seq (next_val bigint) engine=InnoDB;
-insert into account_entity_seq values (20);
-create table account_entity (account_id integer not null, account_number varchar(16), account_type varchar(20), active bit not null, current_balance decimal(20,10), customer_id integer, initial_balance decimal(20,10), updated_at datetime(6), primary key (account_id)) engine=InnoDB;
-create table movement_entity_seq (next_val bigint) engine=InnoDB;
-insert into movement_entity_seq values (20);
-create table movement_entity (movement_id integer not null, created_at datetime(6), initial_balance decimal(20,10), movement_type varchar(20), timestamp datetime(6), value decimal(20,10), account_account_id integer, primary key (movement_id)) engine=InnoDB;
+create table account_entity (account_id integer not null auto_increment, account_number varchar(255), account_type varchar(255), active bit not null, current_balance decimal(20,10), customer_id integer, initial_balance decimal(20,10), updated_at datetime(6), primary key (account_id)) engine=InnoDB;
+create table movement_entity (movement_id integer not null auto_increment, created_at datetime(6), initial_balance decimal(20,10), movement_type varchar(255), timestamp datetime(6), value decimal(20,10), account_account_id integer, primary key (movement_id)) engine=InnoDB;
+
 alter table movement_entity add constraint FK4edjqj8vgmfrgsvxrsin43dpp foreign key (account_account_id) references account_entity (account_id);
-alter table account_entity add constraint UK_q_ad7cy231qf7qx3mhuh47xp2d9 unique (account_number);
+alter table account_entity add constraint FK4edjqj899qfrgsvxrsin43dpp foreign key (customer_id) references customer_entity (customer_id);
 
 -- Integration Tests Data:
 insert into account_entity (account_number,account_type,active,current_balance,customer_id,initial_balance,updated_at,account_id) values 

@@ -3,12 +3,12 @@ body: {
 }
 statusCode: 400
 expectedResponse: {
-  "password": "Password must contain between 8 and 40 characters",
-  "identification": "Identification must contain 8 characters",
-  "address": "Address must contain between 1 and 50 characters",
-  "gender": "Gender must be 'F' or 'M'",
-  "phone": "Phone must contain 9 characters",
-  "name": "Name is required",
-  "active": "Active must be informed",
-  "age": "Age should not be less than 1"
+  "genero": "El género debe ser 'F' o 'M'",
+  "direccion": "La dirección debe contener entre 1 y 50 caracteres",
+  "contrasena": "El password debe contener entre 8 y 40 caracteres",
+  "identificacion": "La identificación debe contener 8 caracteres",
+  "telefono": "El teléfono debe contener 9 caracteres",
+  "edad": "La edad no debe ser menor que 1",
+  "nombre": "El nombre es obligatorio",
+  "activo": "El campo 'activo' es obligatorio"
 }

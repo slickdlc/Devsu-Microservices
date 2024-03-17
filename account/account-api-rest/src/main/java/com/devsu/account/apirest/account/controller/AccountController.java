@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.devsu.account.apirest.account.dto.AccountRequestDto;
 import com.devsu.account.apirest.account.dto.AccountResponseDto;
+import com.devsu.account.apirest.account.dto.AccountToPatchRequestDto;
 import com.devsu.account.apirest.account.mapper.AccountMapper;
 import com.devsu.account.apirest.common.BaseController;
 import com.devsu.account.apirest.common.dto.SuccessMessageDto;
@@ -11,6 +12,7 @@ import com.devsu.domain.usecase.CreateAccountUseCase;
 import com.devsu.domain.usecase.DeleteAccountUseCase;
 import com.devsu.domain.usecase.FindAccountUseCase;
 import com.devsu.domain.usecase.GetAllAccountsUseCase;
+import com.devsu.domain.usecase.PatchAccountUseCase;
 import com.devsu.domain.usecase.UpdateAccountUseCase;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -19,6 +21,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -46,6 +49,8 @@ public class AccountController extends BaseController {
 
   private final UpdateAccountUseCase updateAccountUseCase;
 
+  private final PatchAccountUseCase patchAccountUseCase;
+
   private final DeleteAccountUseCase deleteAccountUseCase;
 
   private final AccountMapper accountMapper;
@@ -65,6 +70,13 @@ public class AccountController extends BaseController {
   public ResponseEntity<SuccessMessageDto> updateAccount(@Valid @NotNull @RequestBody final AccountRequestDto requestDto,
       @Valid @NotNull @PathVariable("id") Integer id) {
     this.updateAccountUseCase.handle(this.accountMapper.toDomain(requestDto, id));
+    return createSuccessMessage(ACCOUNT_UPDATED_SUCCESSFULLY);
+  }
+
+  @PatchMapping("/{id}")
+  public ResponseEntity<SuccessMessageDto> patchAccount(@Valid @NotNull @RequestBody final AccountToPatchRequestDto requestDto,
+      @Valid @NotNull @PathVariable("id") Integer id) {
+    this.patchAccountUseCase.handle(this.accountMapper.toDomain(requestDto, id));
     return createSuccessMessage(ACCOUNT_UPDATED_SUCCESSFULLY);
   }
 

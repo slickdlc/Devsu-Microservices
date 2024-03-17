@@ -6,11 +6,13 @@ import com.devsu.customer.apirest.common.BaseController;
 import com.devsu.customer.apirest.common.dto.SuccessMessageDto;
 import com.devsu.customer.apirest.customer.dto.CustomerRequestDto;
 import com.devsu.customer.apirest.customer.dto.CustomerResponseDto;
+import com.devsu.customer.apirest.customer.dto.CustomerToPatchRequestDto;
 import com.devsu.customer.apirest.customer.mapper.CustomerMapper;
 import com.devsu.customer.domain.usecase.CreateCustomerUseCase;
 import com.devsu.customer.domain.usecase.DeleteCustomerUseCase;
 import com.devsu.customer.domain.usecase.FindCustomerUseCase;
 import com.devsu.customer.domain.usecase.GetAllCustomersUseCase;
+import com.devsu.customer.domain.usecase.PatchCustomerUseCase;
 import com.devsu.customer.domain.usecase.UpdateCustomerUseCase;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -19,6 +21,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -32,11 +35,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class CustomerController extends BaseController {
 
-  private static final String CUSTOMER_CREATED_SUCCESSFULLY = "Customer created successfully";
+  private static final String CUSTOMER_CREATED_SUCCESSFULLY = "El cliente ha sido creado satisfactoriamente";
 
-  private static final String CUSTOMER_UPDATED_SUCCESSFULLY = "Customer updated successfully";
+  private static final String CUSTOMER_UPDATED_SUCCESSFULLY = "El cliente ha sido actualizado satisfactoriamente";
 
-  private static final String CUSTOMER_DELETED_SUCCESSFULLY = "Customer deleted successfully";
+  private static final String CUSTOMER_DELETED_SUCCESSFULLY = "El cliente ha sido eliminado satisfactoriamente";
 
   private final CreateCustomerUseCase createCustomerUseCase;
 
@@ -45,6 +48,8 @@ public class CustomerController extends BaseController {
   private final FindCustomerUseCase findCustomerUseCase;
 
   private final UpdateCustomerUseCase updateCustomerUseCase;
+
+  private final PatchCustomerUseCase patchCustomerUseCase;
 
   private final DeleteCustomerUseCase deleteCustomerUseCase;
 
@@ -65,6 +70,13 @@ public class CustomerController extends BaseController {
   public ResponseEntity<SuccessMessageDto> updateCustomer(@Valid @NotNull @RequestBody final CustomerRequestDto requestDto,
       @Valid @NotNull @PathVariable("id") Integer id) {
     this.updateCustomerUseCase.handle(this.customerMapper.toDomain(requestDto, id));
+    return createSuccessMessage(CUSTOMER_UPDATED_SUCCESSFULLY);
+  }
+
+  @PatchMapping("/{id}")
+  public ResponseEntity<SuccessMessageDto> patchCustomer(@Valid @NotNull @RequestBody final CustomerToPatchRequestDto requestDto,
+      @Valid @NotNull @PathVariable("id") Integer id) {
+    this.patchCustomerUseCase.handle(this.customerMapper.toDomain(requestDto, id));
     return createSuccessMessage(CUSTOMER_UPDATED_SUCCESSFULLY);
   }
 

@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface CustomerDtoMapper {
 
-  @Mapping(target = "customerId", expression = "clienteId")
+  @Mapping(target = "customerId", source = "clienteId")
   @Mapping(target = "customerName", source = "nombre")
   @Mapping(target = "identification", source = "identificacion")
   Customer toDomain(final CustomerDto customerDto);

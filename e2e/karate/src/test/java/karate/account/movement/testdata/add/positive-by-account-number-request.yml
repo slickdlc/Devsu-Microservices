@@ -1,8 +1,8 @@
 path: movimientos
 body: {
-  "value": 15.99,
-  "accountNumber": "1234567812345681",
-  "timestamp": "2024-03-17T00:08:31.292762Z"
+  "saldo": 15.99,
+  "numeroDeCuenta": "1234567812345681",
+  "fechaHoraMovimiento": "20/03/2024 12:13:15"
 }
 statusCode: 200
 expectedResponse: {

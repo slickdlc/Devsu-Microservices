@@ -1,10 +1,10 @@
 path: cuentas/3
 body: {
-  "initialBalance": 10000.999345,
-  "accountType": "Corriente",
-  "customerId": 1,
-  "accountNumber": "1234567812345680",
-  "active": true
+  "saldoInicial": 10000.999345,
+  "tipoDeCuenta": "Corriente",
+  "clienteId": 1,
+  "numeroDeCuenta": "1234567812345680",
+  "activo": true
 }
 statusCode: 200
 expectedResponse: {

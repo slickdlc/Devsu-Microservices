@@ -93,7 +93,7 @@ class CustomerControllerTest {
       assertNotNull(result);
       assertEquals(HttpStatus.OK, result.getStatusCode());
       assertNotNull(result.getBody());
-      assertEquals("Customer created successfully", result.getBody().getMessage());
+      assertEquals("El cliente ha sido creado satisfactoriamente", result.getBody().getMessage());
       verify(CustomerControllerTest.this.createCustomerUseCase).handle(any());
     }
 
@@ -146,7 +146,7 @@ class CustomerControllerTest {
       assertNotNull(result);
       assertEquals(HttpStatus.OK, result.getStatusCode());
       assertNotNull(result.getBody());
-      assertEquals("Customer updated successfully", result.getBody().getMessage());
+      assertEquals("El cliente ha sido actualizado satisfactoriamente", result.getBody().getMessage());
       verify(CustomerControllerTest.this.updateCustomerUseCase).handle(any());
     }
 
@@ -172,7 +172,7 @@ class CustomerControllerTest {
       assertNotNull(result);
       assertEquals(HttpStatus.OK, result.getStatusCode());
       assertNotNull(result.getBody());
-      assertEquals("Customer deleted successfully", result.getBody().getMessage());
+      assertEquals("El cliente ha sido eliminado satisfactoriamente", result.getBody().getMessage());
       verify(CustomerControllerTest.this.deleteCustomerUseCase).handle(CustomerMother.CUSTOMER_ID);
     }
 

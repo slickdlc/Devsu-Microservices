@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2024-03-16 10:54:55 p. m.</div>
+    <div>2024-03-17 01:48:35 a. m.</div>
   </div>
 </div>
 
@@ -87,7 +87,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>31</span>
+              <span>ms:</span>&nbsp;<span>36</span>
             </div>
           </div>
           <div class="step-row">
@@ -138,7 +138,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/create/negative-request-bad-identification.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -166,7 +166,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call customerPost req</span>
       </div>
     </div>
-    <div class="time-cell passed">26</div>
+    <div class="time-cell passed">29</div>
   </div>
 
    
@@ -185,7 +185,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.customer.request.customer-post</div>
       </div>
-      <div class="time-cell passed">20</div>
+      <div class="time-cell passed">22</div>
     </div>
     <div>
       <div><div>
@@ -257,7 +257,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>path req.path</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -313,7 +313,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">17</div>
+    <div class="time-cell passed">18</div>
   </div>
 
    
@@ -322,23 +322,23 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8.0.call.0.9">22:54:55.712 request:
+  <div class="preformatted" data-parent="0.8.0.call.0.9">01:48:35.148 request:
 1 &gt; POST http://localhost:8060/clientes
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 184
+1 &gt; Content-Length: 194
 1 &gt; Host: localhost:8060
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;name&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;password&quot;:&quot;secretpassw0rd&quot;,&quot;address&quot;:&quot;Av. 28 de Julio #1999&quot;,&quot;identification&quot;:&quot;71717171&quot;,&quot;phone&quot;:&quot;959825887&quot;,&quot;active&quot;:true,&quot;gender&quot;:&quot;M&quot;,&quot;age&quot;:26}
+{&quot;nombre&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;contrasena&quot;:&quot;secretpassw0rd&quot;,&quot;direccion&quot;:&quot;Av. 28 de Julio #1999&quot;,&quot;identificacion&quot;:&quot;71717171&quot;,&quot;telefono&quot;:&quot;959825887&quot;,&quot;activo&quot;:true,&quot;genero&quot;:&quot;M&quot;,&quot;edad&quot;:26}
 
-22:54:55.727 response time in milliseconds: 15
+01:48:35.162 response time in milliseconds: 14
 1 &lt; 400
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:55 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:35 GMT
 1 &lt; Connection: close
-{&quot;message&quot;:&quot;El cliente con identificacion [71717171] already exists&quot;}
+{&quot;message&quot;:&quot;El cliente con identificacion [71717171] ya existe&quot;}
 
 </div>   
 
@@ -359,7 +359,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedStatusCode = req.statusCode || responseStatus</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -415,7 +415,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedResponse = req.expectedResponse || response</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -477,7 +477,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>25</span>
+              <span>ms:</span>&nbsp;<span>20</span>
             </div>
           </div>
           <div class="step-row">
@@ -500,7 +500,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def customerPost = read(&#39;classpath:apis/karate/customer/request/customer-post.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -528,7 +528,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/create/negative-request-bad-parameters.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -556,7 +556,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call customerPost req</span>
       </div>
     </div>
-    <div class="time-cell passed">20</div>
+    <div class="time-cell passed">17</div>
   </div>
 
    
@@ -575,7 +575,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.customer.request.customer-post</div>
       </div>
-      <div class="time-cell passed">14</div>
+      <div class="time-cell passed">13</div>
     </div>
     <div>
       <div><div>
@@ -703,7 +703,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">12</div>
+    <div class="time-cell passed">11</div>
   </div>
 
    
@@ -712,7 +712,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12.0.call.0.9">22:54:55.751 request:
+  <div class="preformatted" data-parent="0.12.0.call.0.9">01:48:35.183 request:
 1 &gt; POST http://localhost:8060/clientes
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
@@ -722,13 +722,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:55.760 response time in milliseconds: 8
+01:48:35.191 response time in milliseconds: 7
 1 &lt; 400
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:55 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:35 GMT
 1 &lt; Connection: close
-{&quot;password&quot;:&quot;Password must contain between 8 and 40 characters&quot;,&quot;identification&quot;:&quot;Identification must contain 8 characters&quot;,&quot;address&quot;:&quot;Address must contain between 1 and 50 characters&quot;,&quot;gender&quot;:&quot;Gender must be &#39;F&#39; or &#39;M&#39;&quot;,&quot;phone&quot;:&quot;Phone must contain 9 characters&quot;,&quot;name&quot;:&quot;Name is required&quot;,&quot;active&quot;:&quot;Active must be informed&quot;,&quot;age&quot;:&quot;Age should not be less than 1&quot;}
+{&quot;genero&quot;:&quot;El género debe ser &#39;F&#39; o &#39;M&#39;&quot;,&quot;direccion&quot;:&quot;La dirección debe contener entre 1 y 50 caracteres&quot;,&quot;contrasena&quot;:&quot;El password debe contener entre 8 y 40 caracteres&quot;,&quot;identificacion&quot;:&quot;La identificación debe contener 8 caracteres&quot;,&quot;telefono&quot;:&quot;El teléfono debe contener 9 caracteres&quot;,&quot;edad&quot;:&quot;La edad no debe ser menor que 1&quot;,&quot;nombre&quot;:&quot;El nombre es obligatorio&quot;,&quot;activo&quot;:&quot;El campo &#39;activo&#39; es obligatorio&quot;}
 
 </div>   
 
@@ -867,7 +867,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>46</span>
+              <span>ms:</span>&nbsp;<span>42</span>
             </div>
           </div>
           <div class="step-row">
@@ -918,7 +918,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/create/positive-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -946,7 +946,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call customerPost req</span>
       </div>
     </div>
-    <div class="time-cell passed">42</div>
+    <div class="time-cell passed">37</div>
   </div>
 
    
@@ -965,7 +965,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.customer.request.customer-post</div>
       </div>
-      <div class="time-cell passed">37</div>
+      <div class="time-cell passed">33</div>
     </div>
     <div>
       <div><div>
@@ -981,7 +981,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = __arg</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1093,7 +1093,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">35</div>
+    <div class="time-cell passed">32</div>
   </div>
 
    
@@ -1102,24 +1102,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.16.0.call.0.9">22:54:55.781 request:
+  <div class="preformatted" data-parent="0.16.0.call.0.9">01:48:35.211 request:
 1 &gt; POST http://localhost:8060/clientes
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 184
+1 &gt; Content-Length: 194
 1 &gt; Host: localhost:8060
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;name&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;password&quot;:&quot;secretpassw0rd&quot;,&quot;address&quot;:&quot;Av. 28 de Julio #1999&quot;,&quot;identification&quot;:&quot;01010101&quot;,&quot;phone&quot;:&quot;959825887&quot;,&quot;active&quot;:true,&quot;gender&quot;:&quot;M&quot;,&quot;age&quot;:26}
+{&quot;nombre&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;contrasena&quot;:&quot;secretpassw0rd&quot;,&quot;direccion&quot;:&quot;Av. 28 de Julio #1999&quot;,&quot;identificacion&quot;:&quot;01010101&quot;,&quot;telefono&quot;:&quot;959825887&quot;,&quot;activo&quot;:true,&quot;genero&quot;:&quot;M&quot;,&quot;edad&quot;:26}
 
-22:54:55.815 response time in milliseconds: 33
+01:48:35.240 response time in milliseconds: 29
 1 &lt; 200
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:55 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:35 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
-{&quot;message&quot;:&quot;Customer created successfully&quot;}
+{&quot;message&quot;:&quot;El cliente ha sido creado satisfactoriamente&quot;}
 
 </div>   
 
@@ -1196,7 +1196,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedResponse = req.expectedResponse || response</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    

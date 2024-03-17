@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.devsu.account.apirest.account.dto.AccountRequestDto;
 import com.devsu.account.apirest.account.dto.AccountResponseDto;
+import com.devsu.account.apirest.account.dto.AccountToPatchRequestDto;
 import com.devsu.domain.entity.Account;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
@@ -31,8 +32,21 @@ public interface AccountMapper {
   @Mapping(target = "active", source = "activo")
   Account toDomain(AccountRequestDto accountRequestDto, @Context Integer id);
 
+  @Mapping(target = "accountId", expression = "java(id)")
+  @Mapping(target = "customerId", source = "clienteId")
+  @Mapping(target = "accountNumber", source = "numeroDeCuenta")
+  @Mapping(target = "accountType", source = "tipoDeCuenta")
+  @Mapping(target = "currentBalance", source = "saldoInicial")
+  @Mapping(target = "initialBalance", source = "saldoInicial")
+  @Mapping(target = "active", ignore = true)
+  Account toDomain(AccountToPatchRequestDto accountToPatchRequestDto, @Context Integer id);
+
   default Account toDomain(AccountRequestDto accountRequestDto) {
     return this.toDomain(accountRequestDto, null);
+  }
+
+  default Account toDomain(AccountToPatchRequestDto accountToPatchRequestDto) {
+    return this.toDomain(accountToPatchRequestDto, null);
   }
 
 }

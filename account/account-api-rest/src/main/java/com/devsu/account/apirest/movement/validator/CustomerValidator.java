@@ -14,11 +14,11 @@ public class CustomerValidator implements ConstraintValidator<ValidCustomer, Mov
         || (!isCustomerIdValid(movementRequestDto) && isCustomerIdentificationValid(movementRequestDto));
   }
 
-  private boolean isCustomerIdValid(MovementsByCustomerRequestDto movementRequestDto) {
+  private boolean isCustomerIdValid(final MovementsByCustomerRequestDto movementRequestDto) {
     return movementRequestDto.getCustomerId() != null;
   }
 
-  private boolean isCustomerIdentificationValid(MovementsByCustomerRequestDto movementRequestDto) {
+  private boolean isCustomerIdentificationValid(final MovementsByCustomerRequestDto movementRequestDto) {
     return movementRequestDto.getCustomerIdentification() != null &&
         movementRequestDto.getCustomerIdentification().length() == 8;
   }

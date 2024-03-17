@@ -2,7 +2,9 @@ package com.devsu.account.apirest.movement.mapper;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -13,10 +15,13 @@ import com.devsu.account.apirest.movement.dto.MovementsByCustomerRequestDto;
 import com.devsu.domain.entity.CustomerMovement;
 import com.devsu.domain.entity.Movement;
 import com.devsu.domain.filter.MovementsByCustomerFilter;
+import jakarta.validation.Valid;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
+import org.springframework.validation.annotation.Validated;
 
+@Validated
 @Mapper(componentModel = "spring")
 public interface MovementMapper {
 
@@ -49,10 +54,21 @@ public interface MovementMapper {
   @Mapping(target = "movementType", source = "saldo", qualifiedByName = "toMovementType")
   @Mapping(target = "account.accountNumber", source = "numeroDeCuenta")
   @Mapping(target = "account.accountId", source = "cuentaId")
-  @Mapping(target = "timestamp", source = "fechaMovimiento")
+  @Mapping(target = "timestamp", source = "fechaHoraMovimiento", qualifiedByName = "toInstant")
   @Mapping(target = "value", source = "saldo")
   @Mapping(target = "initialBalance", ignore = true)
   Movement toDomain(MovementRequestDto movementRequestDto);
+
+  @Named("toInstant")
+  default Instant toInstant(final String fechaHoraMovimiento) {
+    if (fechaHoraMovimiento == null) {
+      return Instant.now();
+    } else {
+      LocalDateTime localDateTime = LocalDateTime.parse(fechaHoraMovimiento, FORMATTER);
+      ZonedDateTime zonedDateTime = localDateTime.atZone(ZoneId.systemDefault());
+      return zonedDateTime.toInstant();
+    }
+  }
 
   @Named("toMovementType")
   default String toMovementType(final BigDecimal value) {
@@ -60,6 +76,6 @@ public interface MovementMapper {
         MovementTypeEnum.DEPOSIT.getDescription() : MovementTypeEnum.WITHDRAWAL.getDescription();
   }
 
-  MovementsByCustomerFilter toDomain(final MovementsByCustomerRequestDto requestDto);
+  MovementsByCustomerFilter toDomain(@Valid final MovementsByCustomerRequestDto requestDto);
 
 }

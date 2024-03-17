@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2024-03-16 10:54:55 p. m.</div>
+    <div>2024-03-17 01:48:35 a. m.</div>
   </div>
 </div>
 
@@ -87,7 +87,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>24</span>
+              <span>ms:</span>&nbsp;<span>25</span>
             </div>
           </div>
           <div class="step-row">
@@ -110,7 +110,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def accountGet = read(&#39;classpath:apis/karate/account/request/account-get.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -138,7 +138,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/getaccountstatement/negative-empty-parameters-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -166,7 +166,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call accountGet req</span>
       </div>
     </div>
-    <div class="time-cell passed">20</div>
+    <div class="time-cell passed">19</div>
   </div>
 
    
@@ -322,7 +322,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8.0.call.0.9">22:54:55.412 request:
+  <div class="preformatted" data-parent="0.8.0.call.0.9">01:48:34.864 request:
 1 &gt; GET http://localhost:8061/movimientos/estado-de-cuenta
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
@@ -332,11 +332,11 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:55.420 response time in milliseconds: 7
+01:48:34.870 response time in milliseconds: 6
 1 &lt; 400
 1 &lt; Content-Type: application/problem+json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:54 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:34 GMT
 1 &lt; Connection: close
 {&quot;type&quot;:&quot;about:blank&quot;,&quot;title&quot;:&quot;Bad Request&quot;,&quot;status&quot;:400,&quot;detail&quot;:&quot;Required parameter &#39;fechaInicio&#39; is not present.&quot;,&quot;instance&quot;:&quot;/movimientos/estado-de-cuenta&quot;}
 
@@ -477,7 +477,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>63</span>
+              <span>ms:</span>&nbsp;<span>49</span>
             </div>
           </div>
           <div class="step-row">
@@ -528,7 +528,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/getaccountstatement/positive-by-customer-id-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -556,7 +556,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>url urls.accountBaseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -668,7 +668,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param fechaFin = &quot;30/04/2024&quot;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -696,7 +696,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param clienteId = 5</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -724,7 +724,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">48</div>
+    <div class="time-cell passed">37</div>
   </div>
 
    
@@ -733,7 +733,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.18">22:54:55.453 request:
+  <div class="preformatted" data-parent="0.18">01:48:34.899 request:
 1 &gt; GET http://localhost:8061/movimientos/estado-de-cuenta?clienteId=5&amp;fechaInicio=01%2F03%2F2024&amp;fechaFin=30%2F04%2F2024
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
@@ -743,14 +743,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:55.494 response time in milliseconds: 40
+01:48:34.932 response time in milliseconds: 33
 1 &lt; 200
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:54 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:34 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
-[{&quot;fecha&quot;:&quot;17/03/2024 15:48:16&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.9500000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:95.7700000000,&quot;saldoDisponible&quot;:246.7200000000},{&quot;fecha&quot;:&quot;16/03/2024 15:48:16&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.0000000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:0.9500000000,&quot;saldoDisponible&quot;:150.9500000000},{&quot;fecha&quot;:&quot;16/03/2024 15:48:15&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.9500000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:-0.9500000000,&quot;saldoDisponible&quot;:150.0000000000}]
+[{&quot;fecha&quot;:&quot;17/03/2024 15:48:16&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroDeCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.9500000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:95.7700000000,&quot;saldoDisponible&quot;:246.7200000000},{&quot;fecha&quot;:&quot;16/03/2024 15:48:16&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroDeCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.0000000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:0.9500000000,&quot;saldoDisponible&quot;:150.9500000000},{&quot;fecha&quot;:&quot;16/03/2024 15:48:15&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroDeCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.9500000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:-0.9500000000,&quot;saldoDisponible&quot;:150.0000000000}]
 
 </div>   
 
@@ -771,7 +771,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match responseStatus == req.statusCode</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -828,7 +828,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>53</span>
+              <span>ms:</span>&nbsp;<span>57</span>
             </div>
           </div>
           <div class="step-row">
@@ -851,7 +851,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def accountGet = read(&#39;classpath:apis/karate/account/request/account-get.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -879,7 +879,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/getaccountstatement/positive-by-customer-identification-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -1044,10 +1044,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">30</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param clienteIdentification = &quot;71717167&quot;</span>
+        <span>And</span>&nbsp;<span>param clienteIdentificacion = &quot;71717167&quot;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1075,7 +1075,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">43</div>
+    <div class="time-cell passed">52</div>
   </div>
 
    
@@ -1084,8 +1084,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.31">22:54:55.523 request:
-1 &gt; GET http://localhost:8061/movimientos/estado-de-cuenta?clienteIdentification=71717167&amp;fechaInicio=01%2F03%2F2024&amp;fechaFin=30%2F04%2F2024
+  <div class="preformatted" data-parent="0.31">01:48:34.950 request:
+1 &gt; GET http://localhost:8061/movimientos/estado-de-cuenta?fechaInicio=01%2F03%2F2024&amp;clienteIdentificacion=71717167&amp;fechaFin=30%2F04%2F2024
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
 1 &gt; Host: localhost:8061
@@ -1094,14 +1094,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:55.562 response time in milliseconds: 39
+01:48:34.999 response time in milliseconds: 48
 1 &lt; 200
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:54 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:34 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
-[{&quot;fecha&quot;:&quot;17/03/2024 15:48:16&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.9500000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:95.7700000000,&quot;saldoDisponible&quot;:246.7200000000},{&quot;fecha&quot;:&quot;16/03/2024 15:48:16&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.0000000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:0.9500000000,&quot;saldoDisponible&quot;:150.9500000000},{&quot;fecha&quot;:&quot;16/03/2024 15:48:15&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.9500000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:-0.9500000000,&quot;saldoDisponible&quot;:150.0000000000}]
+[{&quot;fecha&quot;:&quot;17/03/2024 15:48:16&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroDeCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.9500000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:95.7700000000,&quot;saldoDisponible&quot;:246.7200000000},{&quot;fecha&quot;:&quot;16/03/2024 15:48:16&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroDeCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.0000000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:0.9500000000,&quot;saldoDisponible&quot;:150.9500000000},{&quot;fecha&quot;:&quot;16/03/2024 15:48:15&quot;,&quot;cliente&quot;:&quot;Hans Burg De La Cruz Acosta&quot;,&quot;numeroDeCuenta&quot;:&quot;1234567812345683&quot;,&quot;tipo&quot;:&quot;Corriente&quot;,&quot;saldoInicial&quot;:150.9500000000,&quot;estado&quot;:&quot;true&quot;,&quot;movimiento&quot;:-0.9500000000,&quot;saldoDisponible&quot;:150.0000000000}]
 
 </div>   
 
@@ -1122,7 +1122,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match responseStatus == req.statusCode</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1150,7 +1150,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match response == req.expectedResponse</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    

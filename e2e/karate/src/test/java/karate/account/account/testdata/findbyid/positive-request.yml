@@ -2,10 +2,10 @@ path: cuentas/1
 body: { }
 statusCode: 200
 expectedResponse: {
-  "accountId": 1,
-  "customerId": 1,
-  "accountNumber": "1234567812345678",
-  "accountType": "Ahorros",
-  "currentBalance": 1000000.0000000000,
-  "active": true
+  "cuentaId": 1,
+  "clienteId": 1,
+  "numeroDeCuenta": "1234567812345678",
+  "tipoDeCuenta": "Ahorros",
+  "saldoActual": 1000000.0000000000,
+  "activo": true
 }

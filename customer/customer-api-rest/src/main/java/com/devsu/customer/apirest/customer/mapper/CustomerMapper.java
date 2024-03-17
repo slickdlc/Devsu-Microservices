@@ -2,9 +2,9 @@ package com.devsu.customer.apirest.customer.mapper;
 
 import java.util.List;
 
-import com.devsu.customer.apirest.customer.dto.CustomerGenderEnumDto;
 import com.devsu.customer.apirest.customer.dto.CustomerRequestDto;
 import com.devsu.customer.apirest.customer.dto.CustomerResponseDto;
+import com.devsu.customer.apirest.customer.dto.CustomerToPatchRequestDto;
 import com.devsu.customer.domain.entity.Customer;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
@@ -26,8 +26,8 @@ public interface CustomerMapper {
   @Mapping(target = "activo", source = "active")
   CustomerResponseDto fromDomain(final Customer customers);
 
-  @Mapping(target = "customerId", expression = "java(id)")
   @Mapping(target = "personId", ignore = true)
+  @Mapping(target = "customerId", expression = "java(id)")
   @Mapping(target = "name", source = "nombre")
   @Mapping(target = "gender", source = "genero")
   @Mapping(target = "age", source = "edad")
@@ -42,8 +42,20 @@ public interface CustomerMapper {
     return this.toDomain(customerRequestDto, null);
   }
 
-  default CustomerGenderEnumDto toEnum(final String value) {
-    return CustomerGenderEnumDto.fromString(value);
+  @Mapping(target = "personId", ignore = true)
+  @Mapping(target = "active", ignore = true)
+  @Mapping(target = "customerId", expression = "java(id)")
+  @Mapping(target = "name", source = "nombre")
+  @Mapping(target = "gender", source = "genero")
+  @Mapping(target = "age", source = "edad")
+  @Mapping(target = "identification", source = "identificacion")
+  @Mapping(target = "address", source = "direccion")
+  @Mapping(target = "phone", source = "telefono")
+  @Mapping(target = "password", source = "contrasena")
+  Customer toDomain(CustomerToPatchRequestDto customerRequestDto, @Context Integer id);
+
+  default Customer toDomain(CustomerToPatchRequestDto customerRequestDto) {
+    return this.toDomain(customerRequestDto, null);
   }
 
 }

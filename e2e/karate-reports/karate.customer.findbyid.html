@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2024-03-16 10:54:56 p. m.</div>
+    <div>2024-03-17 01:48:35 a. m.</div>
   </div>
 </div>
 
@@ -84,7 +84,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>39</span>
+              <span>ms:</span>&nbsp;<span>52</span>
             </div>
           </div>
           <div class="step-row">
@@ -107,7 +107,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def customerGet = read(&#39;classpath:apis/karate/customer/request/customer-get.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -135,7 +135,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/findbyid/negative-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -163,7 +163,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call customerGet req</span>
       </div>
     </div>
-    <div class="time-cell passed">36</div>
+    <div class="time-cell passed">47</div>
   </div>
 
    
@@ -182,7 +182,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.customer.request.customer-get</div>
       </div>
-      <div class="time-cell passed">30</div>
+      <div class="time-cell passed">32</div>
     </div>
     <div>
       <div><div>
@@ -226,7 +226,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>url urls.customerBaseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -310,7 +310,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">23</div>
+    <div class="time-cell passed">24</div>
   </div>
 
    
@@ -319,7 +319,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8.0.call.0.9">22:54:56.162 request:
+  <div class="preformatted" data-parent="0.8.0.call.0.9">01:48:35.603 request:
 1 &gt; GET http://localhost:8060/clientes/999
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
@@ -329,14 +329,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:56.182 response time in milliseconds: 19
+01:48:35.623 response time in milliseconds: 19
 1 &lt; 404
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:55 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:35 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
-{&quot;message&quot;:&quot;El cliente con id [999] not found&quot;}
+{&quot;message&quot;:&quot;El cliente con id [999] no se ha encontrado&quot;}
 
 </div>   
 
@@ -357,7 +357,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedStatusCode = req.statusCode || responseStatus</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -498,7 +498,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def customerGet = read(&#39;classpath:apis/karate/customer/request/customer-get.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -526,7 +526,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/findbyid/positive-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -554,7 +554,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call customerGet req</span>
       </div>
     </div>
-    <div class="time-cell passed">28</div>
+    <div class="time-cell passed">26</div>
   </div>
 
    
@@ -573,7 +573,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.customer.request.customer-get</div>
       </div>
-      <div class="time-cell passed">22</div>
+      <div class="time-cell passed">20</div>
     </div>
     <div>
       <div><div>
@@ -701,7 +701,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">20</div>
+    <div class="time-cell passed">18</div>
   </div>
 
    
@@ -710,7 +710,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12.0.call.0.9">22:54:56.210 request:
+  <div class="preformatted" data-parent="0.12.0.call.0.9">01:48:35.657 request:
 1 &gt; GET http://localhost:8060/clientes/1
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
@@ -720,14 +720,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:56.228 response time in milliseconds: 18
+01:48:35.673 response time in milliseconds: 16
 1 &lt; 200
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:55 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:35 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
-{&quot;customerId&quot;:1,&quot;name&quot;:&quot;Hans De La Cruz Acosta&quot;,&quot;gender&quot;:&quot;M&quot;,&quot;age&quot;:26,&quot;identification&quot;:&quot;71717171&quot;,&quot;address&quot;:&quot;Av. 28 de Julio #1999&quot;,&quot;phone&quot;:&quot;959825887&quot;,&quot;password&quot;:&quot;passw0rd&quot;,&quot;active&quot;:true}
+{&quot;clienteId&quot;:1,&quot;nombre&quot;:&quot;Hans De La Cruz Acosta&quot;,&quot;genero&quot;:&quot;M&quot;,&quot;edad&quot;:26,&quot;identificacion&quot;:&quot;71717171&quot;,&quot;direccion&quot;:&quot;Av. 28 de Julio #1999&quot;,&quot;telefono&quot;:&quot;959825887&quot;,&quot;contrasena&quot;:&quot;passw0rd&quot;,&quot;activo&quot;:true}
 
 </div>   
 
@@ -804,7 +804,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedResponse = req.expectedResponse || response</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    

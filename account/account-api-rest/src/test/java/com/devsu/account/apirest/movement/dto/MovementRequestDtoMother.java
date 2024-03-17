@@ -1,7 +1,6 @@
 package com.devsu.account.apirest.movement.dto;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 
 import com.devsu.entity.AccountMother;
 import com.devsu.entity.MovementMother;
@@ -13,7 +12,7 @@ public class MovementRequestDtoMother {
   public MovementRequestDto.MovementRequestDtoBuilder builder() {
     return MovementRequestDto.builder()
         .cuentaId(AccountMother.ACCOUNT_ID)
-        .fechaMovimiento(MovementMother.TIMESTAMP)
+        .fechaHoraMovimiento("20/03/2024 12:13:15")
         .saldo(MovementMother.INITIAL_BALANCE);
   }
 
@@ -39,10 +38,5 @@ public class MovementRequestDtoMother {
         .build();
   }
 
-  public static MovementRequestDto withTimestamp(Instant timestamp) {
-    return builder()
-        .fechaMovimiento(timestamp)
-        .build();
-  }
 
 }

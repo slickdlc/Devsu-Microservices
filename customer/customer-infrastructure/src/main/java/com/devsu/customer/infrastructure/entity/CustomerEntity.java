@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class CustomerEntity extends PersonEntity {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer customerId;
 
   private String password;

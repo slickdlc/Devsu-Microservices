@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2024-03-16 10:54:52 p. m.</div>
+    <div>2024-03-17 01:48:32 a. m.</div>
   </div>
 </div>
 
@@ -90,7 +90,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>700</span>
+              <span>ms:</span>&nbsp;<span>423</span>
             </div>
           </div>
           <div class="step-row">
@@ -113,7 +113,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def accountPost = read(&#39;classpath:apis/karate/account/request/account-post.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">13</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -141,7 +141,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/create/negative-request-bad-account-number.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">11</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -169,7 +169,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call accountPost req</span>
       </div>
     </div>
-    <div class="time-cell passed">677</div>
+    <div class="time-cell passed">409</div>
   </div>
 
    
@@ -188,7 +188,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.account.request.account-post</div>
       </div>
-      <div class="time-cell passed">636</div>
+      <div class="time-cell passed">386</div>
     </div>
     <div>
       <div><div>
@@ -204,7 +204,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = __arg</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -316,7 +316,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">594</div>
+    <div class="time-cell passed">354</div>
   </div>
 
    
@@ -325,23 +325,23 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8.0.call.0.9">22:54:41.728 request:
+  <div class="preformatted" data-parent="0.8.0.call.0.9">01:48:31.970 request:
 1 &gt; POST http://localhost:8061/cuentas
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 102
+1 &gt; Content-Length: 101
 1 &gt; Host: localhost:8061
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;initialBalance&quot;:0.999345,&quot;accountType&quot;:&quot;Corriente&quot;,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;0&quot;,&quot;active&quot;:true}
+{&quot;saldoInicial&quot;:0.999345,&quot;tipoDeCuenta&quot;:&quot;Corriente&quot;,&quot;clienteId&quot;:1,&quot;numeroDeCuenta&quot;:&quot;0&quot;,&quot;activo&quot;:true}
 
-22:54:41.797 response time in milliseconds: 64
+01:48:32.027 response time in milliseconds: 43
 1 &lt; 400
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:41 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:32 GMT
 1 &lt; Connection: close
-{&quot;accountNumber&quot;:&quot;Account number must contain 16 digits&quot;}
+{&quot;numeroDeCuenta&quot;:&quot;El número de cuenta debe tener 16 dígitos&quot;}
 
 </div>   
 
@@ -362,7 +362,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedStatusCode = req.statusCode || responseStatus</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -390,7 +390,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match responseStatus == expectedStatusCode</span>
       </div>
     </div>
-    <div class="time-cell passed">21</div>
+    <div class="time-cell passed">14</div>
   </div>
 
    
@@ -418,7 +418,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedResponse = req.expectedResponse || response</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -446,7 +446,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match response == expectedResponse</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -480,7 +480,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>46</span>
+              <span>ms:</span>&nbsp;<span>32</span>
             </div>
           </div>
           <div class="step-row">
@@ -503,7 +503,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def accountPost = read(&#39;classpath:apis/karate/account/request/account-post.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -531,7 +531,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/create/negative-request-empty-parameters.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -559,7 +559,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call accountPost req</span>
       </div>
     </div>
-    <div class="time-cell passed">36</div>
+    <div class="time-cell passed">24</div>
   </div>
 
    
@@ -578,7 +578,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.account.request.account-post</div>
       </div>
-      <div class="time-cell passed">22</div>
+      <div class="time-cell passed">16</div>
     </div>
     <div>
       <div><div>
@@ -650,7 +650,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>path req.path</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -706,7 +706,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">13</div>
+    <div class="time-cell passed">9</div>
   </div>
 
    
@@ -715,7 +715,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12.0.call.0.9">22:54:41.900 request:
+  <div class="preformatted" data-parent="0.12.0.call.0.9">01:48:32.100 request:
 1 &gt; POST http://localhost:8061/cuentas
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
@@ -725,13 +725,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:41.909 response time in milliseconds: 7
+01:48:32.105 response time in milliseconds: 4
 1 &lt; 400
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:41 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:32 GMT
 1 &lt; Connection: close
-{&quot;accountType&quot;:&quot;Account type must be &#39;Corriente&#39; or &#39;Ahorros&#39;&quot;,&quot;initialBalance&quot;:&quot;Initial balance must be greater than or equal to 0&quot;,&quot;customerId&quot;:&quot;Customer Id should not be less than 1&quot;,&quot;active&quot;:&quot;Active must be informed&quot;,&quot;accountNumber&quot;:&quot;Account number must contain 16 digits&quot;}
+{&quot;numeroDeCuenta&quot;:&quot;El número de cuenta debe tener 16 dígitos&quot;,&quot;clienteId&quot;:&quot;El id del cliente no debe ser menor que 1&quot;,&quot;tipoDeCuenta&quot;:&quot;El tipo de cuenta tiene que ser o &#39;Corriente&#39; o &#39;Ahorros&#39;&quot;,&quot;saldoInicial&quot;:&quot;El saldo inicial debe ser mayor o igual que 0.0&quot;,&quot;activo&quot;:&quot;El campo activo es obligatorio&quot;}
 
 </div>   
 
@@ -870,7 +870,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>10367</span>
+              <span>ms:</span>&nbsp;<span>48</span>
             </div>
           </div>
           <div class="step-row">
@@ -893,7 +893,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>def accountPost = read(&#39;classpath:apis/karate/account/request/account-post.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -921,7 +921,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = read(&#39;testdata/create/negative-request-customer-is-not-active-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">5</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -949,7 +949,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call accountPost req</span>
       </div>
     </div>
-    <div class="time-cell passed">10358</div>
+    <div class="time-cell passed">42</div>
   </div>
 
    
@@ -968,7 +968,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.account.request.account-post</div>
       </div>
-      <div class="time-cell passed">10341</div>
+      <div class="time-cell passed">31</div>
     </div>
     <div>
       <div><div>
@@ -1068,7 +1068,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request req.body</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1096,7 +1096,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">10334</div>
+    <div class="time-cell passed">26</div>
   </div>
 
    
@@ -1105,21 +1105,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.16.0.call.0.9">22:54:41.967 request:
+  <div class="preformatted" data-parent="0.16.0.call.0.9">01:48:32.147 request:
 1 &gt; POST http://localhost:8061/cuentas
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 117
+1 &gt; Content-Length: 116
 1 &gt; Host: localhost:8061
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;initialBalance&quot;:0.999345,&quot;accountType&quot;:&quot;Corriente&quot;,&quot;customerId&quot;:4,&quot;accountNumber&quot;:&quot;9876987698769876&quot;,&quot;active&quot;:true}
+{&quot;saldoInicial&quot;:0.999345,&quot;tipoDeCuenta&quot;:&quot;Corriente&quot;,&quot;clienteId&quot;:4,&quot;numeroDeCuenta&quot;:&quot;9876987698769876&quot;,&quot;activo&quot;:true}
 
-22:54:52.296 response time in milliseconds: 10329
+01:48:32.167 response time in milliseconds: 20
 1 &lt; 400
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:52 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:32 GMT
 1 &lt; Connection: close
 {&quot;message&quot;:&quot;No existe ningún cliente activo con el id [4]&quot;}
 
@@ -1226,7 +1226,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match response == expectedResponse</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1260,7 +1260,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>130</span>
+              <span>ms:</span>&nbsp;<span>66</span>
             </div>
           </div>
           <div class="step-row">
@@ -1339,7 +1339,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>call accountPost req</span>
       </div>
     </div>
-    <div class="time-cell passed">124</div>
+    <div class="time-cell passed">59</div>
   </div>
 
    
@@ -1358,7 +1358,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <div class="step-indent"></div>
         <div class="step-cell passed">apis.karate.account.request.account-post</div>
       </div>
-      <div class="time-cell passed">114</div>
+      <div class="time-cell passed">50</div>
     </div>
     <div>
       <div><div>
@@ -1486,7 +1486,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">111</div>
+    <div class="time-cell passed">47</div>
   </div>
 
    
@@ -1495,21 +1495,21 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.20.0.call.0.9">22:54:52.332 request:
+  <div class="preformatted" data-parent="0.20.0.call.0.9">01:48:32.203 request:
 1 &gt; POST http://localhost:8061/cuentas
 1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 117
+1 &gt; Content-Length: 116
 1 &gt; Host: localhost:8061
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;initialBalance&quot;:0.999345,&quot;accountType&quot;:&quot;Corriente&quot;,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;9876987698769876&quot;,&quot;active&quot;:true}
+{&quot;saldoInicial&quot;:0.999345,&quot;tipoDeCuenta&quot;:&quot;Corriente&quot;,&quot;clienteId&quot;:1,&quot;numeroDeCuenta&quot;:&quot;9876987698769876&quot;,&quot;activo&quot;:true}
 
-22:54:52.439 response time in milliseconds: 107
+01:48:32.247 response time in milliseconds: 43
 1 &lt; 200
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:52 GMT
+1 &lt; Date: Sun, 17 Mar 2024 06:48:32 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
 {&quot;message&quot;:&quot;Cuenta creada satisfactoriamente&quot;}
@@ -1561,7 +1561,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match responseStatus == expectedStatusCode</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    

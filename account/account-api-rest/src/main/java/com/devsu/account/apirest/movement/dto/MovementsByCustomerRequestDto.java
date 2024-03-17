@@ -1,6 +1,5 @@
 package com.devsu.account.apirest.movement.dto;
 
-import static com.devsu.account.apirest.movement.validator.MovementValidationMessageConstants.MIN_ACCOUNT_ID_MESSAGE;
 import static com.devsu.account.apirest.movement.validator.MovementValidationMessageConstants.MIN_CUSTOMER_ID_MESSAGE;
 import static com.devsu.account.apirest.movement.validator.MovementValidationMessageConstants.VALID_CUSTOMER_MESSAGE;
 import static com.devsu.account.apirest.movement.validator.MovementValidationMessageConstants.VALID_DATE_RANGE_MESSAGE;

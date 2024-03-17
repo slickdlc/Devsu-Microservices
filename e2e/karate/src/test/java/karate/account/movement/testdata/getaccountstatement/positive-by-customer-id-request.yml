@@ -5,7 +5,7 @@ expectedResponse: [
   {
     "fecha": "17/03/2024 15:48:16",
     "cliente": "Hans Burg De La Cruz Acosta",
-    "numeroCuenta": "1234567812345683",
+    "numeroDeCuenta": "1234567812345683",
     "tipo": "Corriente",
     "saldoInicial": 150.9500000000,
     "estado": "true",
@@ -15,7 +15,7 @@ expectedResponse: [
   {
     "fecha": "16/03/2024 15:48:16",
     "cliente": "Hans Burg De La Cruz Acosta",
-    "numeroCuenta": "1234567812345683",
+    "numeroDeCuenta": "1234567812345683",
     "tipo": "Corriente",
     "saldoInicial": 150.0000000000,
     "estado": "true",
@@ -25,7 +25,7 @@ expectedResponse: [
   {
     "fecha": "16/03/2024 15:48:15",
     "cliente": "Hans Burg De La Cruz Acosta",
-    "numeroCuenta": "1234567812345683",
+    "numeroDeCuenta": "1234567812345683",
     "tipo": "Corriente",
     "saldoInicial": 150.9500000000,
     "estado": "true",

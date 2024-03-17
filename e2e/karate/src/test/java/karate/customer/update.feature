@@ -11,6 +11,6 @@ Feature: Customer Create API
     * def req = read('testdata/update/negative-invalid-id-request.yml')
     * call customerPut req
 
-  Scenario: Positive Case - Customer updated successfully
+  Scenario: Positive Case - El cliente ha sido actualizado satisfactoriamente
     * def req = read('testdata/update/positive-request.yml')
     * call customerPut req

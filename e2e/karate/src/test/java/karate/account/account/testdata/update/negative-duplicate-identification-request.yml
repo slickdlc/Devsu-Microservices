@@ -1,10 +1,10 @@
 path: cuentas/3
 body: {
-  "initialBalance": 10000.999345,
-  "accountType": "Ahorros",
-  "customerId": 1,
-  "accountNumber": "1234567812345678",
-  "active": true
+  "saldoInicial": 10000.999345,
+  "tipoDeCuenta": "Ahorros",
+  "clienteId": 1,
+  "numeroDeCuenta": "1234567812345678",
+  "activo": true
 }
 statusCode: 400
 expectedResponse: {

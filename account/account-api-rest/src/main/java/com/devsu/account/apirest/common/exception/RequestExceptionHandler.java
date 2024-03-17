@@ -4,9 +4,11 @@ import java.util.HashMap;
 
 import com.devsu.account.apirest.common.dto.FailureMessageDto;
 import com.devsu.domain.exception.UseCaseException;
+import jakarta.validation.ConstraintViolationException;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -40,6 +42,11 @@ public class RequestExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     return this.handleExceptionInternal(ex, errors, headers, status, request);
+  }
+
+  @ExceptionHandler(ConstraintViolationException.class)
+  public final ResponseEntity<FailureMessageDto> constraintViolationExceptionHandler(final ConstraintViolationException ex) {
+    return new ResponseEntity<>(retrieveBadRequestResponse(ex.getMessage()), HttpStatus.BAD_REQUEST);
   }
 
   @ExceptionHandler(UseCaseException.class)

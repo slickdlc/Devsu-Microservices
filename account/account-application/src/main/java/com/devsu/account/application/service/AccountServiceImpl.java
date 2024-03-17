@@ -40,6 +40,30 @@ public class AccountServiceImpl implements AccountService {
   }
 
   @Override
+  public void patchAccount(final Account account) {
+    this.doIfExistsAndDoesNotHaveMovements(
+        account.getAccountId(), accountFound -> {
+          if (account.getCustomerId() != null) {
+            accountFound.setCustomerId(account.getCustomerId());
+          }
+          if (account.getAccountNumber() != null) {
+            accountFound.setAccountNumber(account.getAccountNumber());
+          }
+          if (account.getAccountType() != null) {
+            accountFound.setAccountType(account.getAccountType());
+          }
+          if (account.getInitialBalance() != null) {
+            accountFound.setInitialBalance(account.getInitialBalance());
+          }
+          if (account.getCurrentBalance() != null) {
+            accountFound.setCurrentBalance(account.getCurrentBalance());
+          }
+          this.saveAccount(accountFound);
+        }
+    );
+  }
+
+  @Override
   public void deleteAccount(final Integer accountId) {
     this.doIfExistsAndDoesNotHaveMovements(
         accountId, accountFound -> this.accountRepository.deleteAccountById(accountId)
@@ -54,7 +78,8 @@ public class AccountServiceImpl implements AccountService {
   @Override
   public Account getAccountById(final Integer accountId) {
     return this.findAccountById(accountId)
-        .orElseThrow(() -> new ServiceException(HttpStatus.NOT_FOUND, String.format("Account with id [%s] no se ha encontrado", accountId)));
+        .orElseThrow(
+            () -> new ServiceException(HttpStatus.NOT_FOUND, String.format("El ID de cuenta [%s] no se ha encontrado", accountId)));
   }
 
   private Optional<Account> findAccountById(final Integer accountId) {
@@ -67,12 +92,12 @@ public class AccountServiceImpl implements AccountService {
             (account) -> this.movementRepository.findLastMovementTimestamp(accountId).ifPresentOrElse(
                 (lastInstant) -> {
                   throw new ServiceException(HttpStatus.BAD_REQUEST,
-                      String.format("Account with id [%s] has movements and cannot be updated or deleted", accountId));
+                      String.format("El ID de cuenta [%s] tiene movimientos y no puede ser modificado o eliminado", accountId));
                 },
                 () -> consumerInstant.accept(account)
             ),
             () -> {
-              throw new ServiceException(HttpStatus.NOT_FOUND, String.format("Account with id [%s] no se ha encontrado", accountId));
+              throw new ServiceException(HttpStatus.NOT_FOUND, String.format("El ID de cuenta [%s] no se ha encontrado", accountId));
             });
   }
 
@@ -82,11 +107,13 @@ public class AccountServiceImpl implements AccountService {
   }
 
   private void validateToSave(final Account account) {
-    if (!this.customerRepository.existsActiveCustomer(account.getCustomerId())) {
+    if (account.getCustomerId() != null &&
+        !this.customerRepository.existsActiveCustomer(account.getCustomerId())) {
       throw new ServiceException(HttpStatus.BAD_REQUEST,
           String.format("No existe ningún cliente activo con el id [%s]", account.getCustomerId()));
     }
-    this.accountRepository.findByAccountNumber(account.getAccountNumber())
+    Optional.ofNullable(account.getAccountNumber())
+        .flatMap(this.accountRepository::findByAccountNumber)
         .filter(accountFound -> !accountFound.getAccountId().equals(account.getAccountId()))
         .ifPresent(c -> {
           throw new ServiceException(HttpStatus.BAD_REQUEST,

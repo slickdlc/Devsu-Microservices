@@ -2,6 +2,6 @@ path: movimientos
 body: { }
 statusCode: 400
 expectedResponse: {
-  "movementRequestDto": "Account must be informed: accountId or accountNumber. One or the other, not both and neither",
-  "value": "El saldo no puede ser 0"
+  "movementRequestDto": "La cuenta es obligatoria: cuentaId o numeroDeCuenta. Se debe informar uno de ellos solamente.",
+  "saldo": "El saldo no puede ser 0"
 }

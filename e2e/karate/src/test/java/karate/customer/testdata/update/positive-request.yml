@@ -1,15 +1,15 @@
 path: clientes/3
 body: {
-  "name": "Hans Burg De La Cruz Acosta",
-  "password": "secretpassw0rd",
-  "address": "Av. 28 de Julio #1999",
-  "identification": "12341234",
-  "phone": "959825887",
-  "active": true,
-  "gender": "M",
-  "age": 26
+  "nombre": "Hans Burg De La Cruz Acosta",
+  "contrasena": "secretpassw0rd",
+  "direccion": "Av. 28 de Julio #1999",
+  "identificacion": "12341234",
+  "telefono": "959825887",
+  "activo": true,
+  "genero": "M",
+  "edad": 26
 }
 statusCode: 200
 expectedResponse: {
-  "message": "Customer updated successfully"
+  "message": "El cliente ha sido actualizado satisfactoriamente"
 }

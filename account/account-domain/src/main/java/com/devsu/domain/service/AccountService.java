@@ -10,6 +10,8 @@ public interface AccountService {
 
   void updateAccount(final Account account);
 
+  void patchAccount(final Account account);
+
   void deleteAccount(final Integer accountId);
 
   List<Account> getAllAccounts();

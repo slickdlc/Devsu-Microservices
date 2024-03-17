@@ -1,20 +1,22 @@
 package com.devsu.customer.domain.service;
 
-import com.devsu.customer.domain.entity.Customer;
-
 import java.util.List;
+
+import com.devsu.customer.domain.entity.Customer;
 
 public interface CustomerService {
 
-    void createCustomer(final Customer customer);
+  void createCustomer(final Customer customer);
 
-    void updateCustomer(final Customer customer);
+  void updateCustomer(final Customer customer);
 
-    void deleteCustomer(final Integer customerId);
+  void patchCustomer(final Customer customer);
 
-    List<Customer> getAllCustomers();
+  void deleteCustomer(final Integer customerId);
 
-    Customer getCustomerById(final Integer customerId);
+  List<Customer> getAllCustomers();
 
-    Customer getCustomerByIdentification(final String identification);
+  Customer getCustomerById(final Integer customerId);
+
+  Customer getCustomerByIdentification(final String identification);
 }
