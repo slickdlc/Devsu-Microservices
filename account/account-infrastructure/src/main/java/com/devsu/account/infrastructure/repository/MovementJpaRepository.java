@@ -20,7 +20,7 @@ public interface MovementJpaRepository extends CrudRepository<MovementEntity, In
       SELECT m
       FROM MovementEntity m
       WHERE m.account.accountId IN :accountIds
-      AND m.timestamp BETWEEN :startDate AND :endDate
+      AND m.timestamp BETWEEN DATE(:startDate) AND DATE(:endDate)
       ORDER BY m.timestamp DESC, m.id DESC
       """)
   List<MovementEntity> findByAccountIdsAndTimestampBetween(final List<Integer> accountIds, final LocalDate startDate,

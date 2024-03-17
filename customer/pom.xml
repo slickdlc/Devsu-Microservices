@@ -107,7 +107,7 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
           <configuration>
-            <mainClass>com.devsu.account.boot.Application</mainClass>
+            <mainClass>com.devsu.account.boot.AccountApplication</mainClass>
           </configuration>
         </plugin>
         <plugin>

@@ -1,0 +1,6 @@
+path: cuentas/2
+body: { }
+statusCode: 200
+expectedResponse: {
+  "message": "Account deleted successfully"
+}

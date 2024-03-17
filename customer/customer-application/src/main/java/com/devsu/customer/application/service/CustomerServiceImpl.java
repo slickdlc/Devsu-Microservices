@@ -56,6 +56,13 @@ public class CustomerServiceImpl implements CustomerService {
         .orElseThrow(() -> new ServiceException(HttpStatus.NOT_FOUND, String.format("Customer with id [%s] not found", customerId)));
   }
 
+  @Override
+  public Customer getCustomerByIdentification(String identification) {
+    return this.customerRepository.findCustomerByIdentification(identification)
+        .orElseThrow(
+            () -> new ServiceException(HttpStatus.NOT_FOUND, String.format("Customer with identification [%s] not found", identification)));
+  }
+
   private void saveCustomer(final Customer customer) {
     this.validateToSave(customer);
     this.customerRepository.saveCustomer(customer);

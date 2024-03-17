@@ -11,7 +11,7 @@ public class AccountValidationMessageConstants {
 
   public static final String INITIAL_BALANCE_VALUE_MESSAGE = "Initial balance must be greater than or equal to 0";
 
-  public static final String ACCOUNT_NUMBER_LENGTH_MESSAGE = "Account number must contain 16";
+  public static final String ACCOUNT_NUMBER_LENGTH_MESSAGE = "Account number must contain 16 digits";
 
   public static final String ACTIVE_MESSAGE = "Active must be informed";
 

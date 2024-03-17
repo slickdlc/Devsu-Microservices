@@ -3,7 +3,7 @@ package com.devsu.account.infrastructure.entity;
 import java.math.BigDecimal;
 import java.time.Instant;
 
-import com.devsu.domain.entity.Movement;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +24,7 @@ public class MovementEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer movementId;
-  
+
   @ManyToOne
   private AccountEntity account;
 
@@ -32,8 +32,10 @@ public class MovementEntity {
 
   private String movementType;
 
+    @Column(precision = 20, scale = 10)
   private BigDecimal value;
 
+    @Column(precision = 20, scale = 10)
   private BigDecimal initialBalance;
 
   //Auditoría

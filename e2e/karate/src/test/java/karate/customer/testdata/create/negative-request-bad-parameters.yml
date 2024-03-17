@@ -1,4 +1,4 @@
-path: customer
+path: clientes
 body: {
 }
 statusCode: 400

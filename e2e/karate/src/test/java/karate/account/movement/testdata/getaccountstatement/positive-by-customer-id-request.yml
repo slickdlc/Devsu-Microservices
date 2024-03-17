@@ -1,0 +1,35 @@
+path: movimientos/estado-de-cuenta
+body: { }
+statusCode: 200
+expectedResponse: [
+  {
+    "fecha": "17/03/2024 15:48:16",
+    "cliente": "Hans Burg De La Cruz Acosta",
+    "numeroCuenta": "1234567812345683",
+    "tipoMovimiento": "Depósito",
+    "saldoInicial": 150.9500000000,
+    "estado": "true",
+    "movimiento": 95.7700000000,
+    "saldoDisponible": 246.7200000000
+  },
+  {
+    "fecha": "16/03/2024 15:48:16",
+    "cliente": "Hans Burg De La Cruz Acosta",
+    "numeroCuenta": "1234567812345683",
+    "tipoMovimiento": "Depósito",
+    "saldoInicial": 150.0000000000,
+    "estado": "true",
+    "movimiento": 0.9500000000,
+    "saldoDisponible": 150.9500000000
+  },
+  {
+    "fecha": "16/03/2024 15:48:15",
+    "cliente": "Hans Burg De La Cruz Acosta",
+    "numeroCuenta": "1234567812345683",
+    "tipoMovimiento": "Retiro",
+    "saldoInicial": 150.9500000000,
+    "estado": "true",
+    "movimiento": -0.9500000000,
+    "saldoDisponible": 150.0000000000
+  }
+]

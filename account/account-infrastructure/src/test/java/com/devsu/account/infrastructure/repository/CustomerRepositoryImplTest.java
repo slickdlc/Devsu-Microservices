@@ -39,7 +39,7 @@ class CustomerRepositoryImplTest {
 
     @Test
     void given_customerIdentificationThatDoesNotExist_when_findActiveCustomer_then_returnEmpty() {
-      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/customer/identification/12345678", CustomerDto.class))
+      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/clientes/identification/12345678", CustomerDto.class))
           .thenThrow(NotFound.class);
 
       final var result = customerRepository.findActiveCustomer(CustomerMother.CUSTOMER_IDENTIFICATION);
@@ -61,7 +61,7 @@ class CustomerRepositoryImplTest {
 
     @Test
     void given_positiveCase_when_findActiveCustomer_then_returnEmpty() {
-      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/customer/identification/12345678", CustomerDto.class))
+      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/clientes/identification/12345678", CustomerDto.class))
           .thenReturn(ResponseEntity.ok(CustomerDtoMother.complete()));
 
       final var result = customerRepository.findActiveCustomer(CustomerMother.CUSTOMER_IDENTIFICATION);
@@ -79,7 +79,7 @@ class CustomerRepositoryImplTest {
 
     @Test
     void given_customerIdThatDoesNotExist_when_findActiveCustomer_then_returnEmpty() {
-      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/customer/1", CustomerDto.class))
+      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/clientes/1", CustomerDto.class))
           .thenThrow(NotFound.class);
 
       final var result = customerRepository.findActiveCustomer(CustomerMother.CUSTOMER_ID);
@@ -101,7 +101,7 @@ class CustomerRepositoryImplTest {
 
     @Test
     void given_positiveCase_when_findActiveCustomer_then_returnEmpty() {
-      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/customer/1", CustomerDto.class))
+      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/clientes/1", CustomerDto.class))
           .thenReturn(ResponseEntity.ok(CustomerDtoMother.complete()));
 
       final var result = customerRepository.findActiveCustomer(CustomerMother.CUSTOMER_ID);
@@ -119,7 +119,7 @@ class CustomerRepositoryImplTest {
 
     @Test
     void given_customerIdentificationThatDoesNotExist_when_existsActiveCustomer_then_returnFalse() {
-      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/customer/identification/12345678", CustomerDto.class))
+      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/clientes/identification/12345678", CustomerDto.class))
           .thenThrow(NotFound.class);
 
       final var result = customerRepository.existsActiveCustomer(CustomerMother.CUSTOMER_IDENTIFICATION);
@@ -139,7 +139,7 @@ class CustomerRepositoryImplTest {
 
     @Test
     void given_positiveCase_when_existsActiveCustomer_then_returnTrue() {
-      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/customer/identification/12345678", CustomerDto.class))
+      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/clientes/identification/12345678", CustomerDto.class))
           .thenReturn(ResponseEntity.ok(CustomerDtoMother.complete()));
 
       final var result = customerRepository.existsActiveCustomer(CustomerMother.CUSTOMER_IDENTIFICATION);
@@ -153,7 +153,7 @@ class CustomerRepositoryImplTest {
 
     @Test
     void given_customerIdThatDoesNotExist_when_existsActiveCustomer_then_returnFalse() {
-      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/customer/1", CustomerDto.class))
+      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/clientes/1", CustomerDto.class))
           .thenThrow(NotFound.class);
 
       final var result = customerRepository.existsActiveCustomer(CustomerMother.CUSTOMER_ID);
@@ -173,7 +173,7 @@ class CustomerRepositoryImplTest {
 
     @Test
     void given_positiveCase_when_existsActiveCustomer_then_returnTrue() {
-      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/customer/1", CustomerDto.class))
+      when(CustomerRepositoryImplTest.this.customerRestTemplate.getForEntity("/clientes/1", CustomerDto.class))
           .thenReturn(ResponseEntity.ok(CustomerDtoMother.complete()));
 
       final var result = customerRepository.existsActiveCustomer(CustomerMother.CUSTOMER_ID);

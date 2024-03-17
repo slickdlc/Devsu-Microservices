@@ -1,4 +1,4 @@
 urls:
-  customerUrl: 'http://localhost:8060'
-  movementsUrl: 'http://localhost:8061'
+  customerBaseUrl: 'http://localhost:8060'
+  accountBaseUrl: 'http://localhost:8061'
   

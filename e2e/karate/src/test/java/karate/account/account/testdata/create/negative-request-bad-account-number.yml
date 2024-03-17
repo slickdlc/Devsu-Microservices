@@ -1,0 +1,12 @@
+path: cuentas
+body: {
+  "initialBalance": 0.999345,
+  "accountType": "Corriente",
+  "customerId": 1,
+  "accountNumber": "0",
+  "active": true
+}
+statusCode: 400
+expectedResponse: {
+  "accountNumber": "Account number must contain 16 digits"
+}

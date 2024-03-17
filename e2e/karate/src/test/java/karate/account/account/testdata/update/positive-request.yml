@@ -1,0 +1,12 @@
+path: cuentas/3
+body: {
+  "initialBalance": 10000.999345,
+  "accountType": "Corriente",
+  "customerId": 1,
+  "accountNumber": "1234567812345680",
+  "active": true
+}
+statusCode: 200
+expectedResponse: {
+  "message": "Account updated successfully"
+}

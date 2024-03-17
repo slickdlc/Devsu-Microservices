@@ -22,4 +22,13 @@ public class FindCustomerUseCaseImpl implements FindCustomerUseCase {
       throw new UseCaseException(e);
     }
   }
+
+  @Override
+  public Customer handle(final String identification) {
+    try {
+      return this.customerService.getCustomerByIdentification(identification);
+    } catch (ServiceException e) {
+      throw new UseCaseException(e);
+    }
+  }
 }

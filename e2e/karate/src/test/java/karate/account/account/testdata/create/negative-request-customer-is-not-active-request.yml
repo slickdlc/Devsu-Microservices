@@ -1,0 +1,12 @@
+path: cuentas
+body: {
+  "initialBalance": 0.999345,
+  "accountType": "Corriente",
+  "customerId": 4,
+  "accountNumber": "9876987698769876",
+  "active": true
+}
+statusCode: 400
+expectedResponse: {
+  "message": "No existe ningún cliente activo con el id [4]"
+}

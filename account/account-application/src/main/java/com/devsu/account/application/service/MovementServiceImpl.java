@@ -1,5 +1,6 @@
 package com.devsu.account.application.service;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
@@ -77,7 +78,7 @@ public class MovementServiceImpl implements MovementService {
   }
 
   private void validateBalance(final Account account, final Movement movement) {
-    if (account.getCurrentBalance().compareTo(movement.getValue()) < 0) {
+    if (account.getCurrentBalance().add(movement.getValue()).compareTo(BigDecimal.ZERO) < 0) {
       throw new ServiceException(HttpStatus.BAD_REQUEST,
           "No se puede efectuar esta operación. El saldo del movimiento excede el saldo de la cuenta.");
     }

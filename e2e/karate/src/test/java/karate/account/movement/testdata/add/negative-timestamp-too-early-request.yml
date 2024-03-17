@@ -1,0 +1,10 @@
+path: movimientos
+body: {
+  "value": 15.99,
+  "accountId": 6,
+  "timestamp": "2023-03-16T20:48:15.292762Z"
+}
+statusCode: 400
+expectedResponse: {
+  "message": "La fecha de la transacción no puede ser anterior a la última transacción. Ultima transacción [2024-03-17T20:48:16Z]"
+}

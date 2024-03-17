@@ -8,6 +8,7 @@ import com.devsu.domain.entity.Account;
 import com.devsu.domain.exception.ServiceException;
 import com.devsu.domain.repository.AccountRepository;
 import com.devsu.domain.repository.CustomerRepository;
+import com.devsu.domain.repository.MovementRepository;
 import com.devsu.domain.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,8 @@ public class AccountServiceImpl implements AccountService {
 
   private final CustomerRepository customerRepository;
 
+  private final MovementRepository movementRepository;
+
   @Override
   public void createAccount(final Account account) {
     if (account.getAccountId() != null) {
@@ -31,14 +34,14 @@ public class AccountServiceImpl implements AccountService {
 
   @Override
   public void updateAccount(final Account account) {
-    this.doIfExists(
+    this.doIfExistsAndDoesNotHaveMovements(
         account.getAccountId(), accountFound -> this.saveAccount(account)
     );
   }
 
   @Override
   public void deleteAccount(final Integer accountId) {
-    this.doIfExists(
+    this.doIfExistsAndDoesNotHaveMovements(
         accountId, accountFound -> this.accountRepository.deleteAccountById(accountId)
     );
   }
@@ -58,10 +61,16 @@ public class AccountServiceImpl implements AccountService {
     return this.accountRepository.findByAccountId(accountId);
   }
 
-  public void doIfExists(final Integer accountId, final Consumer<Account> consumerAccount) {
+  public void doIfExistsAndDoesNotHaveMovements(final Integer accountId, final Consumer<Account> consumerInstant) {
     this.findAccountById(accountId)
         .ifPresentOrElse(
-            consumerAccount,
+            (account) -> this.movementRepository.findLastMovementTimestamp(accountId).ifPresentOrElse(
+                (lastInstant) -> {
+                  throw new ServiceException(HttpStatus.BAD_REQUEST,
+                      String.format("Account with id [%s] has movements and cannot be updated or deleted", accountId));
+                },
+                () -> consumerInstant.accept(account)
+            ),
             () -> {
               throw new ServiceException(HttpStatus.NOT_FOUND, String.format("Account with id [%s] not found", accountId));
             });

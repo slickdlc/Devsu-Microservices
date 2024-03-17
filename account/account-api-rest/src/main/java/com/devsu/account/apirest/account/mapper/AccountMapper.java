@@ -18,7 +18,7 @@ public interface AccountMapper {
   AccountResponseDto fromDomain(final Account accounts);
 
   @Mapping(target = "accountId", expression = "java(id)")
-  @Mapping(target = "currentBalance", ignore = true)
+  @Mapping(target = "currentBalance", source = "initialBalance")
   Account toDomain(AccountRequestDto accountRequestDto, @Context Integer id);
 
   default Account toDomain(AccountRequestDto accountRequestDto) {

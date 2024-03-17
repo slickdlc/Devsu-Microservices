@@ -1,0 +1,12 @@
+path: cuentas/3
+body: {
+  "initialBalance": 10000.999345,
+  "accountType": "Ahorros",
+  "customerId": 1,
+  "accountNumber": "1234567812345678",
+  "active": true
+}
+statusCode: 400
+expectedResponse: {
+  "message": "Ya existe una cuenta asociada al número de cuenta [1234567812345678]"
+}

@@ -1,0 +1,11 @@
+path: cuentas
+body: {
+}
+statusCode: 400
+expectedResponse: {
+  "initialBalance": "Initial balance must be greater than or equal to 0",
+  "accountType": "Account type must be 'Corriente' or 'Ahorros'",
+  "customerId": "Customer Id should not be less than 1",
+  "active": "Active must be informed",
+  "accountNumber": "Account number must contain 16 digits"
+}

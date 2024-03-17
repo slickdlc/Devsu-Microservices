@@ -1,4 +1,4 @@
-path: customer/1
+path: clientes/1
 body: { }
 statusCode: 200
 expectedResponse: {

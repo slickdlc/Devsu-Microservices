@@ -1,0 +1,7 @@
+path: movimientos
+body: { }
+statusCode: 400
+expectedResponse: {
+  "movementRequestDto": "Account must be informed: accountId or accountNumber. One or the other, not both and neither",
+  "value": "Value must not be 0"
+}

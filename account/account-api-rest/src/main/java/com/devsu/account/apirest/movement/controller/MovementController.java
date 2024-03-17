@@ -11,10 +11,10 @@ import com.devsu.account.apirest.movement.dto.MovementsByCustomerRequestDto;
 import com.devsu.account.apirest.movement.mapper.MovementMapper;
 import com.devsu.domain.usecase.AddMovementUseCase;
 import com.devsu.domain.usecase.GetMovementsUseCase;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,9 +46,10 @@ public class MovementController extends BaseController {
 
   @GetMapping("/estado-de-cuenta")
   public ResponseEntity<List<MovementByCustomerResponseDto>> getAccountStatement(
-      @RequestParam("fechaInicio") @JsonFormat(pattern = "dd/MM/yyyy") final LocalDate startDate,
-      @RequestParam("fechaFin") final LocalDate endDate, @RequestParam("clienteId") final Integer customerId,
-      @RequestParam("clienteIdentification") final String customerIdentification) {
+      @RequestParam("fechaInicio") @DateTimeFormat(pattern = "dd/MM/yyyy") final LocalDate startDate,
+      @RequestParam("fechaFin") @DateTimeFormat(pattern = "dd/MM/yyyy") final LocalDate endDate,
+      @RequestParam(value = "clienteId", required = false) final Integer customerId,
+      @RequestParam(value = "clienteIdentification", required = false) final String customerIdentification) {
 
     return ok(
         this.movementMapper.fromDomain(

@@ -1,0 +1,6 @@
+path: cuentas/6
+body: { }
+statusCode: 400
+expectedResponse: {
+  "message": "Account with id [6] has movements and cannot be updated or deleted"
+}

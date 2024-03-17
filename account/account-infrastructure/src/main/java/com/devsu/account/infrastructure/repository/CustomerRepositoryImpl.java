@@ -17,9 +17,9 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class CustomerRepositoryImpl implements CustomerRepository {
 
-  private static final String PATH_FIND_CUSTOMER_BY_ID = "/customer/%s";
+  private static final String PATH_FIND_CUSTOMER_BY_ID = "/clientes/%s";
 
-  private static final String PATH_FIND_CUSTOMER_BY_IDENTIFICATION = "/customer/identification/%s";
+  private static final String PATH_FIND_CUSTOMER_BY_IDENTIFICATION = "/clientes/identification/%s";
 
   private final RestTemplate customerRestTemplate;
 

@@ -1,0 +1,12 @@
+path: cuentas
+body: {
+  "initialBalance": 0.999345,
+  "accountType": "Corriente",
+  "customerId": 1,
+  "accountNumber": "9876987698769876",
+  "active": true
+}
+statusCode: 200
+expectedResponse: {
+  "message": "Account created successfully"
+}

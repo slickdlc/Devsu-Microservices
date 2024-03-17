@@ -1,4 +1,4 @@
-path: customer/999
+path: clientes/999
 body: { }
 statusCode: 404
 expectedResponse: {

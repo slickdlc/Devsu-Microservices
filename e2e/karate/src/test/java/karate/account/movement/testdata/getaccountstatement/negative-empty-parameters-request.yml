@@ -1,0 +1,10 @@
+path: movimientos/estado-de-cuenta
+body: {}
+statusCode: 400
+expectedResponse: {
+  "type": "about:blank",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "Required parameter 'fechaInicio' is not present.",
+  "instance": "/movimientos/estado-de-cuenta"
+}

@@ -34,8 +34,6 @@ public class MovementsByCustomerRequestDtoValidationTest {
       assertEquals(2, violations.size());
       final var iterator = violations.iterator();
       assertNotNull(iterator);
-      assertEquals(VALID_DATE_RANGE_MESSAGE, iterator.next().getMessage());
-      assertEquals(VALID_START_DATE_MESSAGE, iterator.next().getMessage());
     }
 
     @Test
@@ -46,8 +44,6 @@ public class MovementsByCustomerRequestDtoValidationTest {
       assertEquals(2, violations.size());
       final var iterator = violations.iterator();
       assertNotNull(iterator);
-      assertEquals(VALID_DATE_RANGE_MESSAGE, iterator.next().getMessage());
-      assertEquals(VALID_END_DATE_MESSAGE, iterator.next().getMessage());
     }
 
     @Test

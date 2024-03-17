@@ -24,9 +24,9 @@ public class AccountRepositoryIT extends ApplicationAbstractIT {
 
   private static final String ACCOUNT_TYPE = "Ahorros";
 
-  private static final BigDecimal INITIAL_BALANCE = new BigDecimal("1000000");
+  private static final BigDecimal INITIAL_BALANCE = new BigDecimal("1000000.0000000000");
 
-  private static final BigDecimal CURRENT_BALANCE = new BigDecimal("1000000");
+  private static final BigDecimal CURRENT_BALANCE = new BigDecimal("1000000.0000000000");
 
   private static final Boolean ACTIVE = true;
 
@@ -47,9 +47,9 @@ public class AccountRepositoryIT extends ApplicationAbstractIT {
   @Nested
   class SaveAccount {
 
-    private static final String ACCOUNT_NUMBER_DOES_NOT_EXIST = "12341234";
+    private static final String ACCOUNT_NUMBER_DOES_NOT_EXIST = "1234123498769876";
 
-    private static final String ACCOUNT_NUMBER_DOES_NOT_EXIST_TWO = "12341235";
+    private static final String ACCOUNT_NUMBER_DOES_NOT_EXIST_TWO = "1234123498769877";
 
     private static final Integer ACCOUNT_ID_TO_UPDATE = 3;
 

@@ -3,7 +3,7 @@ Feature: Executes doRequest
 
   Scenario: doRequest
     * def req = __arg
-    Given url urls.customerUrl
+    Given url urls.customerBaseUrl
     And path req.path
     And request req.body
     When method GET

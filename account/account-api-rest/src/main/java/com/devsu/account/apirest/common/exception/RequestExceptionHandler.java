@@ -32,7 +32,11 @@ public class RequestExceptionHandler extends ResponseEntityExceptionHandler {
 
     var errors = new HashMap<>();
     for (var err : ex.getBindingResult().getAllErrors()) {
-      errors.put(((FieldError) err).getField(), err.getDefaultMessage());
+      if (err instanceof FieldError) {
+        errors.put(((FieldError) err).getField(), err.getDefaultMessage());
+      } else {
+        errors.put(err.getObjectName(), err.getDefaultMessage());
+      }
     }
 
     return this.handleExceptionInternal(ex, errors, headers, status, request);

@@ -15,4 +15,6 @@ public interface CustomerService {
     List<Customer> getAllCustomers();
 
     Customer getCustomerById(final Integer customerId);
+
+    Customer getCustomerByIdentification(final String identification);
 }

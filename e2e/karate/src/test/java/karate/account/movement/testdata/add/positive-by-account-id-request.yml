@@ -1,0 +1,10 @@
+path: movimientos
+body: {
+  "value": 15.99,
+  "accountId": 4,
+  "timestamp": "2024-03-17T00:08:31.292762Z"
+}
+statusCode: 200
+expectedResponse: {
+  "message": "Movement added successfully"
+}

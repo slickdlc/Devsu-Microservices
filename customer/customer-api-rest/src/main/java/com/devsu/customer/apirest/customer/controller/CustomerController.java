@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Validated
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/clientes")
 @RequiredArgsConstructor
 public class CustomerController extends BaseController {
 
@@ -75,8 +75,13 @@ public class CustomerController extends BaseController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<CustomerResponseDto> getCustomer(@Valid @NotNull @PathVariable("id") Integer id) {
+  public ResponseEntity<CustomerResponseDto> getCustomer(@Valid @NotNull @PathVariable("id") final Integer id) {
     return ok(this.customerMapper.fromDomain(this.findCustomerUseCase.handle(id)));
+  }
+
+  @GetMapping("/identification/{id}")
+  public ResponseEntity<CustomerResponseDto> getCustomer(@Valid @NotNull @PathVariable("id") final String identification) {
+    return ok(this.customerMapper.fromDomain(this.findCustomerUseCase.handle(identification)));
   }
 
 }

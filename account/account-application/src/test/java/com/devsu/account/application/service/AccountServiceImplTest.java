@@ -13,7 +13,9 @@ import java.util.Optional;
 import com.devsu.domain.exception.ServiceException;
 import com.devsu.domain.repository.AccountRepository;
 import com.devsu.domain.repository.CustomerRepository;
+import com.devsu.domain.repository.MovementRepository;
 import com.devsu.entity.AccountMother;
+import com.devsu.entity.MovementMother;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,6 +34,9 @@ class AccountServiceImplTest {
 
   @Mock
   private CustomerRepository customerRepository;
+
+  @Mock
+  private MovementRepository movementRepository;
 
   @Nested
   class CreateAccount {
@@ -169,9 +174,24 @@ class AccountServiceImplTest {
     }
 
     @Test
+    void given_accountIdThatHasMovements_when_deleteAccount_then_expectedException() {
+      when(AccountServiceImplTest.this.accountRepository.findByAccountId(AccountMother.ACCOUNT_ID)).thenReturn(
+          Optional.of(AccountMother.complete()));
+      when(AccountServiceImplTest.this.movementRepository.findLastMovementTimestamp(AccountMother.ACCOUNT_ID)).thenReturn(
+          Optional.of(MovementMother.TIMESTAMP));
+
+      assertThrows(ServiceException.class, () -> AccountServiceImplTest.this.accountService.deleteAccount(AccountMother.ACCOUNT_ID));
+
+      verify(AccountServiceImplTest.this.accountRepository).findByAccountId(AccountMother.ACCOUNT_ID);
+      verify(AccountServiceImplTest.this.accountRepository, never()).deleteAccountById(AccountMother.ACCOUNT_ID);
+    }
+
+    @Test
     void given_positiveCase_when_deleteAccount_then_accountIsDeleted() {
       when(AccountServiceImplTest.this.accountRepository.findByAccountId(AccountMother.ACCOUNT_ID)).thenReturn(
           Optional.of(AccountMother.complete()));
+      when(AccountServiceImplTest.this.movementRepository.findLastMovementTimestamp(AccountMother.ACCOUNT_ID)).thenReturn(
+          Optional.empty());
 
       AccountServiceImplTest.this.accountService.deleteAccount(AccountMother.ACCOUNT_ID);
 

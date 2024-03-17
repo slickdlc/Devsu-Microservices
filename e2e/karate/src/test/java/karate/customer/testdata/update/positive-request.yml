@@ -1,4 +1,4 @@
-path: customer/3
+path: clientes/3
 body: {
   "name": "Hans Burg De La Cruz Acosta",
   "password": "secretpassw0rd",

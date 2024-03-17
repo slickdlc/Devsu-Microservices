@@ -14,6 +14,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @Builder
@@ -26,7 +27,8 @@ public class MovementRequestDto {
   private Integer accountId;
 
   private String accountNumber;
-
+  
+  @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
   private Instant timestamp = Instant.now();
 
   @ValidBalance(message = VALUE_MUST_NOT_BE_ZERO_MESSAGE)
