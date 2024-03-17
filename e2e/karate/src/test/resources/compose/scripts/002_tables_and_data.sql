@@ -1,3 +1,4 @@
+
 use devsu;
 create table customer_entity_seq (next_val bigint) engine=InnoDB;
 insert into customer_entity_seq values ( 10 );
@@ -15,7 +16,6 @@ alter table account_entity add constraint UK_q_ad7cy231qf7qx3mhuh47xp2d9 unique 
 
 -- e2e Data:
 -- Customer Microservice
-
 -- List of customers || Find By ID
 insert into customer_entity (active,address,age,gender,identification,name,password,phone,customer_id)
  values (true,'Av. 28 de Julio #1999',26,'M','71717171','Hans De La Cruz Acosta','passw0rd','959825887',1);
@@ -27,6 +27,10 @@ insert into customer_entity (active,address,age,gender,identification,name,passw
 -- To Update
 insert into customer_entity (active,address,age,gender,identification,name,password,phone,customer_id)
 values (false,'----',10,'M','71717169','Desconocido','secret','999999999',3);
+
+-- Not Active customer
+insert into customer_entity (active,address,age,gender,identification,name,password,phone,customer_id)
+values (false,'----',10,'M','71717168','Desconocido','secret','999999999',4);
 
 -- e2e Data:
 insert into account_entity (account_number,account_type,active,current_balance,customer_id,initial_balance,updated_at,account_id) values 
@@ -45,14 +49,27 @@ insert into account_entity (account_number,account_type,active,current_balance,c
 insert into account_entity (account_number,account_type,active,current_balance,customer_id,initial_balance,updated_at,account_id) values 
 ("1234567812345681","Ahorros",true,150.95,1,150.95,'2024-03-16 20:48:15',4);
 
+-- Customer Is Not active
+insert into account_entity (account_number,account_type,active,current_balance,customer_id,initial_balance,updated_at,account_id) values 
+("1234567812345684","Ahorros",false,150.95,1,150.95,'2024-03-16 20:48:15',7);
+
 
 -- Find Last Movement
 -- Account without movements
 insert into account_entity (account_number,account_type,active,current_balance,customer_id,initial_balance,updated_at,account_id) values 
 ("1234567812345682","Ahorros",true,150.95,1,150.95,'2024-03-16 20:48:15',5);
 -- Account with movements
+insert into customer_entity (active,address,age,gender,identification,name,password,phone,customer_id)
+values (true,'Av. 28 de Julio #999',35,'M','71717167','Hans Burg De La Cruz Acosta','changeme','999999999',5);
+
 insert into account_entity (account_number,account_type,active,current_balance,customer_id,initial_balance,updated_at,account_id) values 
-("1234567812345683","Corriente",true,150.95,1,150.00,'2024-03-16 20:48:15',6);
+("1234567812345683","Corriente",true,246.72,5,150.95,'2024-03-16 20:48:15',6);
 
 insert into movement_entity (account_account_id,created_at,initial_balance,movement_type,timestamp,value,movement_id) values 
 (6,'2024-03-16 20:48:15',150.95,'Retiro','2024-03-16 20:48:15',-0.95,1);
+
+insert into movement_entity (account_account_id,created_at,initial_balance,movement_type,timestamp,value,movement_id) values 
+(6,'2024-03-16 20:48:16',150.00,'Depósito','2024-03-16 20:48:16',0.95,2);
+
+insert into movement_entity (account_account_id,created_at,initial_balance,movement_type,timestamp,value,movement_id) values 
+(6,'2024-03-16 20:48:17',150.95,'Depósito','2024-03-17 20:48:16',95.77,3);

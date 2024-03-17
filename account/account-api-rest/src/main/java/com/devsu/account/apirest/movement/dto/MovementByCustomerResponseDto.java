@@ -17,7 +17,7 @@ public class MovementByCustomerResponseDto {
 
   private String numeroCuenta;
 
-  private String tipoMovimiento;
+  private String tipo;
 
   private BigDecimal saldoInicial;
 

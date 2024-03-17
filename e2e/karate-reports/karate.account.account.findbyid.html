@@ -26,7 +26,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 });
 </script>
 
-    <title>karate.customer.delete</title>
+    <title>karate.account.account.findbyid</title>
   </head>
   <body>
     <div id="root-container">
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2024-03-16 10:54:56 p. m.</div>
+    <div>2024-03-16 10:54:53 p. m.</div>
   </div>
 </div>
 
@@ -58,7 +58,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
             <a href="#[1:6]"><span>[1:6]</span> <span>Negative Case - Invalid Id</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[2:10]"><span>[2:10]</span> <span>Positive Case - Customer deleted</span></a>
+            <a href="#[2:10]"><span>[2:10]</span> <span>Positive Case - Account retrieved successfully</span></a>
           </div>
         </div>
       </div>
@@ -67,8 +67,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
           <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
           <span class="feature-label">Feature:</span>
-          <span class="feature-path">karate/customer/delete.feature</span><span class="feature-label">|</span>
-          <span class="feature-name">Customer Create API</span>
+          <span class="feature-path">karate/account/account/findbyid.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Account Create API</span>
           <span class="feature-description"></span>
         </div>
         <div class="scenario">
@@ -84,7 +84,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>34</span>
+              <span>ms:</span>&nbsp;<span>42</span>
             </div>
           </div>
           <div class="step-row">
@@ -104,10 +104,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>def customerDelete = read(&#39;classpath:apis/karate/customer/request/customer-delete.feature&#39;)</span>
+        <span>Given</span>&nbsp;<span>def accountGet = read(&#39;classpath:apis/karate/account/request/account-get.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -132,10 +132,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">7</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def req = read(&#39;testdata/delete/negative-invalid-id-request.yml&#39;)</span>
+        <span>*</span>&nbsp;<span>def req = read(&#39;testdata/findbyid/negative-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -160,10 +160,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>call customerDelete req</span>
+        <span>*</span>&nbsp;<span>call accountGet req</span>
       </div>
     </div>
-    <div class="time-cell passed">29</div>
+    <div class="time-cell passed">34</div>
   </div>
 
    
@@ -180,9 +180,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-container" id="0.8.0.call">
         <div class="step-ref passed">&gt;&gt;</div>
         <div class="step-indent"></div>
-        <div class="step-cell passed">apis.karate.customer.request.customer-delete</div>
+        <div class="step-cell passed">apis.karate.account.request.account-get</div>
       </div>
-      <div class="time-cell passed">23</div>
+      <div class="time-cell passed">26</div>
     </div>
     <div>
       <div><div>
@@ -223,7 +223,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">6</div>
       <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>url urls.customerBaseUrl</span>
+        <span>Given</span>&nbsp;<span>url urls.accountBaseUrl</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
@@ -282,7 +282,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request req.body</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -307,10 +307,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">9</div>
       <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method DELETE</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">19</div>
+    <div class="time-cell passed">17</div>
   </div>
 
    
@@ -319,24 +319,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.8.0.call.0.9">22:54:55.993 request:
-1 &gt; DELETE http://localhost:8060/clientes/999
+  <div class="preformatted" data-parent="0.8.0.call.0.9">22:54:53.900 request:
+1 &gt; GET http://localhost:8061/cuentas/999
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
-1 &gt; Host: localhost:8060
+1 &gt; Host: localhost:8061
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:56.009 response time in milliseconds: 14
+22:54:53.914 response time in milliseconds: 14
 1 &lt; 404
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:55 GMT
+1 &lt; Date: Sun, 17 Mar 2024 03:54:53 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
-{&quot;message&quot;:&quot;Customer with id [999] not found&quot;}
+{&quot;message&quot;:&quot;Account with id [999] not found&quot;}
 
 </div>   
 
@@ -441,7 +441,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match response == expectedResponse</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -470,12 +470,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[2:10]</span>
-                <span class="scenario-name">Positive Case - Customer deleted</span>
+                <span class="scenario-name">Positive Case - Account retrieved successfully</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>51</span>
+              <span>ms:</span>&nbsp;<span>43</span>
             </div>
           </div>
           <div class="step-row">
@@ -495,10 +495,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>def customerDelete = read(&#39;classpath:apis/karate/customer/request/customer-delete.feature&#39;)</span>
+        <span>Given</span>&nbsp;<span>def accountGet = read(&#39;classpath:apis/karate/account/request/account-get.feature&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -523,10 +523,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">11</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def req = read(&#39;testdata/delete/positive-request.yml&#39;)</span>
+        <span>*</span>&nbsp;<span>def req = read(&#39;testdata/findbyid/positive-request.yml&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">4</div>
   </div>
 
    
@@ -551,10 +551,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">12</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>call customerDelete req</span>
+        <span>*</span>&nbsp;<span>call accountGet req</span>
       </div>
     </div>
-    <div class="time-cell passed">48</div>
+    <div class="time-cell passed">37</div>
   </div>
 
    
@@ -571,9 +571,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-container" id="0.12.0.call">
         <div class="step-ref passed">&gt;&gt;</div>
         <div class="step-indent"></div>
-        <div class="step-cell passed">apis.karate.customer.request.customer-delete</div>
+        <div class="step-cell passed">apis.karate.account.request.account-get</div>
       </div>
-      <div class="time-cell passed">44</div>
+      <div class="time-cell passed">28</div>
     </div>
     <div>
       <div><div>
@@ -589,7 +589,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def req = __arg</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -614,7 +614,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">6</div>
       <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>url urls.customerBaseUrl</span>
+        <span>Given</span>&nbsp;<span>url urls.accountBaseUrl</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -698,10 +698,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">9</div>
       <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method DELETE</span>
+        <span>When</span>&nbsp;<span>method GET</span>
       </div>
     </div>
-    <div class="time-cell passed">43</div>
+    <div class="time-cell passed">26</div>
   </div>
 
    
@@ -710,24 +710,24 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12.0.call.0.9">22:54:56.029 request:
-1 &gt; DELETE http://localhost:8060/clientes/2
+  <div class="preformatted" data-parent="0.12.0.call.0.9">22:54:53.948 request:
+1 &gt; GET http://localhost:8061/cuentas/1
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 2
-1 &gt; Host: localhost:8060
+1 &gt; Host: localhost:8061
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
 1 &gt; Accept-Encoding: gzip,deflate
 {}
 
-22:54:56.070 response time in milliseconds: 40
+22:54:53.971 response time in milliseconds: 22
 1 &lt; 200
 1 &lt; Content-Type: application/json
 1 &lt; Transfer-Encoding: chunked
-1 &lt; Date: Sun, 17 Mar 2024 03:54:55 GMT
+1 &lt; Date: Sun, 17 Mar 2024 03:54:53 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Connection: keep-alive
-{&quot;message&quot;:&quot;Customer deleted successfully&quot;}
+{&quot;accountId&quot;:1,&quot;customerId&quot;:1,&quot;accountNumber&quot;:&quot;1234567812345678&quot;,&quot;accountType&quot;:&quot;Ahorros&quot;,&quot;currentBalance&quot;:1000000.0000000000,&quot;active&quot;:true}
 
 </div>   
 
@@ -804,7 +804,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def expectedResponse = req.expectedResponse || response</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    

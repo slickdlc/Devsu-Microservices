@@ -29,7 +29,7 @@ public interface MovementMapper {
   @Mapping(target = "fecha", source = "movement.timestamp", qualifiedByName = "toFormattedDate")
   @Mapping(target = "cliente", source = "customerName")
   @Mapping(target = "numeroCuenta", source = "movement.account.accountNumber")
-  @Mapping(target = "tipoMovimiento", source = "movement.movementType")
+  @Mapping(target = "tipo", source = "movement.account.accountType")
   @Mapping(target = "saldoInicial", source = "movement.initialBalance")
   @Mapping(target = "estado", source = "movement.account.active")
   @Mapping(target = "movimiento", source = "movement.value")

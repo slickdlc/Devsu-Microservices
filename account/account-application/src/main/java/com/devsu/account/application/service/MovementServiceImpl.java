@@ -80,7 +80,7 @@ public class MovementServiceImpl implements MovementService {
   private void validateBalance(final Account account, final Movement movement) {
     if (account.getCurrentBalance().add(movement.getValue()).compareTo(BigDecimal.ZERO) < 0) {
       throw new ServiceException(HttpStatus.BAD_REQUEST,
-          "No se puede efectuar esta operación. El saldo del movimiento excede el saldo de la cuenta.");
+          "[Saldo no disponible] No se puede efectuar esta operación. El saldo del movimiento excede el saldo de la cuenta.");
     }
   }
 
