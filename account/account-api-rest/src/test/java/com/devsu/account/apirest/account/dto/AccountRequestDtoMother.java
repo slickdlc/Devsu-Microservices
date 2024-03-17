@@ -3,7 +3,6 @@ package com.devsu.account.apirest.account.dto;
 import java.math.BigDecimal;
 
 import com.devsu.entity.AccountMother;
-import com.devsu.account.apirest.account.dto.AccountRequestDto;
 import com.devsu.account.apirest.account.dto.AccountRequestDto.AccountRequestDtoBuilder;
 import com.devsu.entity.CustomerMother;
 import lombok.experimental.UtilityClass;
@@ -13,11 +12,11 @@ public class AccountRequestDtoMother {
 
   public AccountRequestDtoBuilder builder() {
     return AccountRequestDto.builder()
-        .customerId(CustomerMother.CUSTOMER_ID)
-        .accountNumber(AccountMother.ACCOUNT_NUMBER)
-        .accountType(AccountMother.ACCOUNT_TYPE)
-        .initialBalance(AccountMother.INITIAL_BALANCE)
-        .active(AccountMother.ACTIVE);
+        .clienteId(CustomerMother.CUSTOMER_ID)
+        .numeroDeCuenta(AccountMother.ACCOUNT_NUMBER)
+        .tipoDeCuenta(AccountMother.ACCOUNT_TYPE)
+        .saldoInicial(AccountMother.INITIAL_BALANCE)
+        .activo(AccountMother.ACTIVE);
   }
 
   public AccountRequestDto complete() {
@@ -26,31 +25,31 @@ public class AccountRequestDtoMother {
 
   public AccountRequestDto customerId(final Integer customerId) {
     return builder()
-        .customerId(customerId)
+        .clienteId(customerId)
         .build();
   }
 
   public static AccountRequestDto withInitialBalance(final BigDecimal initialBalance) {
     return builder()
-        .initialBalance(initialBalance)
+        .saldoInicial(initialBalance)
         .build();
   }
 
   public static AccountRequestDto accountNumber(final String accountNumber) {
     return builder()
-        .accountNumber(accountNumber)
+        .numeroDeCuenta(accountNumber)
         .build();
   }
 
   public static AccountRequestDto withAccountType(final String accountType) {
     return builder()
-        .accountType(accountType)
+        .tipoDeCuenta(accountType)
         .build();
   }
 
   public static AccountRequestDto withActive(Boolean active) {
     return builder()
-        .active(active)
+        .activo(active)
         .build();
   }
 

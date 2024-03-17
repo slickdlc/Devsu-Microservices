@@ -24,14 +24,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class MovementRequestDto {
 
   @Min(value = 1, message = MIN_ACCOUNT_ID_MESSAGE)
-  private Integer accountId;
+  private Integer cuentaId;
 
-  private String accountNumber;
+  private String numeroDeCuenta;
   
   @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
-  private Instant timestamp = Instant.now();
+  private Instant fechaMovimiento = Instant.now();
 
   @ValidBalance(message = VALUE_MUST_NOT_BE_ZERO_MESSAGE)
-  private BigDecimal value;
+  private BigDecimal saldo;
 
 }

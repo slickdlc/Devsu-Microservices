@@ -29,33 +29,33 @@ public class CustomerRequestDto {
 
   @NotNull(message = NAME_IS_REQUIRED_MESSAGE)
   @Size(min = 1, max = 50, message = NAME_LENGTH_MESSAGE)
-  private String name;
+  private String nombre;
 
   @NotNull(message = GENDER_IS_REQUIRED_MESSAGE)
   @ValidCustomerGender(anyOf = {CustomerGenderEnumDto.FEMALE, CustomerGenderEnumDto.MALE}, message = GENDER_IS_REQUIRED_MESSAGE)
-  private String gender;
+  private String genero;
 
   @NotNull(message = AGE_MIN_MESSAGE)
   @Min(value = 1, message = AGE_MIN_MESSAGE)
   @Max(value = 100, message = AGE_MAX_MESSAGE)
-  private Integer age;
+  private Integer edad;
 
   @NotNull(message = IDENTIFICATION_LENGTH_MESSAGE)
   @Size(min = 8, max = 8, message = IDENTIFICATION_LENGTH_MESSAGE)
-  private String identification;
+  private String identificacion;
 
   @NotNull(message = ADDRESS_LENGTH_MESSAGE)
   @Size(min = 1, max = 50, message = ADDRESS_LENGTH_MESSAGE)
-  private String address;
+  private String direccion;
 
   @NotNull(message = PHONE_LENGTH_MESSAGE)
   @Size(min = 9, max = 9, message = PHONE_LENGTH_MESSAGE)
-  private String phone;
+  private String telefono;
 
   @NotNull(message = PASSWORD_LENGTH_MESSAGE)
   @Size(min = 8, max = 40, message = PASSWORD_LENGTH_MESSAGE)
-  private String password;
+  private String contrasena;
 
   @NotNull(message = ACTIVE_MESSAGE)
-  private Boolean active;
+  private Boolean activo;
 }

@@ -44,8 +44,8 @@ public class MovementRequestDtoValidationTest {
     void given_movementWithEmptyAccountNumber_when_validate_then_expectedViolations() {
       Set<ConstraintViolation<MovementRequestDto>> violations =
           MovementRequestDtoValidationTest.this.validator.validate(MovementRequestDtoMother.builder()
-              .accountId(null)
-              .accountNumber("")
+              .cuentaId(null)
+              .numeroDeCuenta("")
               .build());
 
       assertEquals(1, violations.size());

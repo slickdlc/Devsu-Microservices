@@ -2,5 +2,5 @@ path: clientes/999
 body: {}
 statusCode: 404
 expectedResponse: {
-  "message": "Customer with id [999] not found"
+  "message": "El cliente con id [999] no se ha encontrado"
 }

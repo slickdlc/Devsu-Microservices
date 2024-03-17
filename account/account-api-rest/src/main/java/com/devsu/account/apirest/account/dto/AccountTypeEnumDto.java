@@ -12,13 +12,4 @@ public enum AccountTypeEnumDto {
   AccountTypeEnumDto(final String value) {
     this.value = value;
   }
-
-  public static AccountTypeEnumDto fromString(final String value) {
-    if (value.equalsIgnoreCase("Corriente")) {
-      return CORRIENTE;
-    } else if (value.equalsIgnoreCase("Ahorros")) {
-      return AHORROS;
-    }
-    throw new IllegalArgumentException("Invalid value");
-  }
 }

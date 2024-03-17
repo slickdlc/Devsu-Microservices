@@ -2,5 +2,5 @@ path: cuentas/999
 body: {}
 statusCode: 404
 expectedResponse: {
-  "message": "Account with id [999] not found"
+  "message": "Account with id [999] no se ha encontrado"
 }

@@ -15,7 +15,7 @@ public class MovementByCustomerResponseDto {
 
   private String cliente;
 
-  private String numeroCuenta;
+  private String numeroDeCuenta;
 
   private String tipo;
 

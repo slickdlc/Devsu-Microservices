@@ -54,7 +54,7 @@ public class AccountServiceImpl implements AccountService {
   @Override
   public Account getAccountById(final Integer accountId) {
     return this.findAccountById(accountId)
-        .orElseThrow(() -> new ServiceException(HttpStatus.NOT_FOUND, String.format("Account with id [%s] not found", accountId)));
+        .orElseThrow(() -> new ServiceException(HttpStatus.NOT_FOUND, String.format("Account with id [%s] no se ha encontrado", accountId)));
   }
 
   private Optional<Account> findAccountById(final Integer accountId) {
@@ -72,7 +72,7 @@ public class AccountServiceImpl implements AccountService {
                 () -> consumerInstant.accept(account)
             ),
             () -> {
-              throw new ServiceException(HttpStatus.NOT_FOUND, String.format("Account with id [%s] not found", accountId));
+              throw new ServiceException(HttpStatus.NOT_FOUND, String.format("Account with id [%s] no se ha encontrado", accountId));
             });
   }
 

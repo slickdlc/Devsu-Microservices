@@ -11,16 +11,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AccountResponseDto {
 
-  private Integer accountId;
+  private Integer cuentaId;
 
-  private Integer customerId;
+  private Integer clienteId;
 
-  private String accountNumber;
+  private String numeroDeCuenta;
 
-  private String accountType;
+  private String tipoDeCuenta;
 
-  private BigDecimal currentBalance;
+  private BigDecimal saldoActual;
 
-  private boolean active;
+  private boolean activo;
 
 }

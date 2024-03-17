@@ -19,7 +19,7 @@ public class CustomerServiceImpl implements CustomerService {
   @Override
   public void createCustomer(final Customer customer) {
     if (customer.getCustomerId() != null) {
-      throw new ServiceException(HttpStatus.BAD_REQUEST, "Customer Id must be null");
+      throw new IllegalArgumentException("El id debe ser nulo en la creación de un cliente nuevo");
     }
     this.saveCustomer(customer);
   }
@@ -31,7 +31,7 @@ public class CustomerServiceImpl implements CustomerService {
             customerFound -> this.saveCustomer(customer),
             () -> {
               throw new ServiceException(HttpStatus.NOT_FOUND,
-                  String.format("Customer with id [%s] not found", customer.getCustomerId()));
+                  String.format("El cliente con id [%s] no se ha encontrado", customer.getCustomerId()));
             });
   }
 
@@ -41,7 +41,7 @@ public class CustomerServiceImpl implements CustomerService {
         .ifPresentOrElse(
             customer -> this.customerRepository.deleteCustomerById(customerId),
             () -> {
-              throw new ServiceException(HttpStatus.NOT_FOUND, String.format("Customer with id [%s] not found", customerId));
+              throw new ServiceException(HttpStatus.NOT_FOUND, String.format("El cliente con id [%s] no se ha encontrado", customerId));
             });
   }
 
@@ -53,14 +53,14 @@ public class CustomerServiceImpl implements CustomerService {
   @Override
   public Customer getCustomerById(final Integer customerId) {
     return this.customerRepository.findCustomerById(customerId)
-        .orElseThrow(() -> new ServiceException(HttpStatus.NOT_FOUND, String.format("Customer with id [%s] not found", customerId)));
+        .orElseThrow(() -> new ServiceException(HttpStatus.NOT_FOUND, String.format("El cliente con id [%s] no se ha encontrado", customerId)));
   }
 
   @Override
   public Customer getCustomerByIdentification(String identification) {
     return this.customerRepository.findCustomerByIdentification(identification)
         .orElseThrow(
-            () -> new ServiceException(HttpStatus.NOT_FOUND, String.format("Customer with identification [%s] not found", identification)));
+            () -> new ServiceException(HttpStatus.NOT_FOUND, String.format("El cliente con identificacion [%s] no se ha encontrado", identification)));
   }
 
   private void saveCustomer(final Customer customer) {
@@ -73,7 +73,7 @@ public class CustomerServiceImpl implements CustomerService {
         .filter(customerFound -> !customerFound.getCustomerId().equals(customer.getCustomerId()))
         .ifPresent(c -> {
           throw new ServiceException(HttpStatus.BAD_REQUEST,
-              String.format("Customer with identification [%s] already exists", c.getIdentification()));
+              String.format("El cliente con identificacion [%s] ya existe", c.getIdentification()));
         });
   }
 

@@ -6,5 +6,5 @@ body: {
 }
 statusCode: 200
 expectedResponse: {
-  "message": "Movement added successfully"
+  "message": "Movimiento añadido satisfactoriamente"
 }

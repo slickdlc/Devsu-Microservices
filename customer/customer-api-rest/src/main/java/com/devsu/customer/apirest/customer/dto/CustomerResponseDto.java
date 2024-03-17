@@ -9,22 +9,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CustomerResponseDto {
 
-  private Integer customerId;
+  private Integer clienteId;
 
-  private String name;
+  private String nombre;
 
-  private String gender;
+  private String genero;
 
-  private Integer age;
+  private Integer edad;
 
-  private String identification;
+  private String identificacion;
 
-  private String address;
+  private String direccion;
 
-  private String phone;
+  private String telefono;
 
-  private String password;
+  private String contrasena;
 
-  private boolean active;
+  private boolean activo;
 
 }

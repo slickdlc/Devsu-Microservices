@@ -54,7 +54,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
       return Optional.ofNullable(
               this.customerRestTemplate.getForEntity(url,
                   CustomerDto.class).getBody())
-          .filter(CustomerDto::isActive);
+          .filter(CustomerDto::isActivo);
 
     } catch (final NotFound e) {
       return Optional.empty();

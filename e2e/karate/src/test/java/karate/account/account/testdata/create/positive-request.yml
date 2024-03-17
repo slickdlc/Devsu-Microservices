@@ -8,5 +8,5 @@ body: {
 }
 statusCode: 200
 expectedResponse: {
-  "message": "Account created successfully"
+  "message": "Cuenta creada satisfactoriamente"
 }

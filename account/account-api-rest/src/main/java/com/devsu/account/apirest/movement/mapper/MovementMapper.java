@@ -28,7 +28,7 @@ public interface MovementMapper {
 
   @Mapping(target = "fecha", source = "movement.timestamp", qualifiedByName = "toFormattedDate")
   @Mapping(target = "cliente", source = "customerName")
-  @Mapping(target = "numeroCuenta", source = "movement.account.accountNumber")
+  @Mapping(target = "numeroDeCuenta", source = "movement.account.accountNumber")
   @Mapping(target = "tipo", source = "movement.account.accountType")
   @Mapping(target = "saldoInicial", source = "movement.initialBalance")
   @Mapping(target = "estado", source = "movement.account.active")
@@ -46,11 +46,11 @@ public interface MovementMapper {
     return movement.getInitialBalance().add(movement.getValue());
   }
 
-  @Mapping(target = "movementType", source = "value", qualifiedByName = "toMovementType")
-  @Mapping(target = "account.accountNumber", source = "accountNumber")
-  @Mapping(target = "account.accountId", source = "accountId")
-  @Mapping(target = "timestamp", source = "timestamp")
-  @Mapping(target = "value", source = "value")
+  @Mapping(target = "movementType", source = "saldo", qualifiedByName = "toMovementType")
+  @Mapping(target = "account.accountNumber", source = "numeroDeCuenta")
+  @Mapping(target = "account.accountId", source = "cuentaId")
+  @Mapping(target = "timestamp", source = "fechaMovimiento")
+  @Mapping(target = "value", source = "saldo")
   @Mapping(target = "initialBalance", ignore = true)
   Movement toDomain(MovementRequestDto movementRequestDto);
 

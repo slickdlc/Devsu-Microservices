@@ -26,20 +26,20 @@ public class AccountRequestDto {
 
   @NotNull(message = CUSTOMER_ID_MIN_MESSAGE)
   @Min(value = 1, message = CUSTOMER_ID_MIN_MESSAGE)
-  private Integer customerId;
+  private Integer clienteId;
 
   @NotNull(message = ACCOUNT_NUMBER_LENGTH_MESSAGE)
   @Size(min = 16, max = 16, message = ACCOUNT_NUMBER_LENGTH_MESSAGE)
-  private String accountNumber;
+  private String numeroDeCuenta;
 
   @NotNull(message = ACCOUNT_TYPE_IS_REQUIRED_MESSAGE)
   @AccountTypeSubSet(anyOf = {AccountTypeEnumDto.CORRIENTE, AccountTypeEnumDto.AHORROS}, message = ACCOUNT_TYPE_IS_REQUIRED_MESSAGE)
-  private String accountType;
+  private String tipoDeCuenta;
 
   @NotNull(message = INITIAL_BALANCE_VALUE_MESSAGE)
   @DecimalMin(value = "0.0", message = INITIAL_BALANCE_VALUE_MESSAGE)
-  private BigDecimal initialBalance;
+  private BigDecimal saldoInicial;
 
   @NotNull(message = ACTIVE_MESSAGE)
-  private Boolean active;
+  private Boolean activo;
 }

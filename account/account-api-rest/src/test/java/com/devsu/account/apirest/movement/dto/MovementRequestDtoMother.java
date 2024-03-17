@@ -12,9 +12,9 @@ public class MovementRequestDtoMother {
 
   public MovementRequestDto.MovementRequestDtoBuilder builder() {
     return MovementRequestDto.builder()
-        .accountId(AccountMother.ACCOUNT_ID)
-        .timestamp(MovementMother.TIMESTAMP)
-        .value(MovementMother.INITIAL_BALANCE);
+        .cuentaId(AccountMother.ACCOUNT_ID)
+        .fechaMovimiento(MovementMother.TIMESTAMP)
+        .saldo(MovementMother.INITIAL_BALANCE);
   }
 
   public MovementRequestDto complete() {
@@ -23,25 +23,25 @@ public class MovementRequestDtoMother {
 
   public MovementRequestDto withAccountId(final Integer accountId) {
     return builder()
-        .accountId(accountId)
+        .cuentaId(accountId)
         .build();
   }
 
   public static MovementRequestDto withValue(final BigDecimal value) {
     return builder()
-        .value(value)
+        .saldo(value)
         .build();
   }
 
   public static MovementRequestDto withAccountNumber(final String accountNumber) {
     return builder()
-        .accountNumber(accountNumber)
+        .numeroDeCuenta(accountNumber)
         .build();
   }
 
   public static MovementRequestDto withTimestamp(Instant timestamp) {
     return builder()
-        .timestamp(timestamp)
+        .fechaMovimiento(timestamp)
         .build();
   }
 

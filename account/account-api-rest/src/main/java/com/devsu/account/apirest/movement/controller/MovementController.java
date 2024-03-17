@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class MovementController extends BaseController {
 
-  private static final String ACCOUNT_CREATED_SUCCESSFULLY = "Movement added successfully";
+  private static final String ACCOUNT_CREATED_SUCCESSFULLY = "Movimiento añadido satisfactoriamente";
 
   private final AddMovementUseCase addMovementUseCase;
 
@@ -49,7 +49,7 @@ public class MovementController extends BaseController {
       @RequestParam("fechaInicio") @DateTimeFormat(pattern = "dd/MM/yyyy") final LocalDate startDate,
       @RequestParam("fechaFin") @DateTimeFormat(pattern = "dd/MM/yyyy") final LocalDate endDate,
       @RequestParam(value = "clienteId", required = false) final Integer customerId,
-      @RequestParam(value = "clienteIdentification", required = false) final String customerIdentification) {
+      @RequestParam(value = "clienteIdentificacion", required = false) final String customerIdentification) {
 
     return ok(
         this.movementMapper.fromDomain(

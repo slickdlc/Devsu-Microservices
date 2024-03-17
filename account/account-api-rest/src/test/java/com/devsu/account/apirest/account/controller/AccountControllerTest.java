@@ -92,7 +92,7 @@ class AccountControllerTest {
       assertNotNull(result);
       assertEquals(HttpStatus.OK, result.getStatusCode());
       assertNotNull(result.getBody());
-      assertEquals("Account created successfully", result.getBody().getMessage());
+      assertEquals("Cuenta creada satisfactoriamente", result.getBody().getMessage());
       verify(AccountControllerTest.this.createAccountUseCase).handle(any());
     }
 
@@ -145,7 +145,7 @@ class AccountControllerTest {
       assertNotNull(result);
       assertEquals(HttpStatus.OK, result.getStatusCode());
       assertNotNull(result.getBody());
-      assertEquals("Account updated successfully", result.getBody().getMessage());
+      assertEquals("Cuenta modificada satisfactoriamente", result.getBody().getMessage());
       verify(AccountControllerTest.this.updateAccountUseCase).handle(any());
     }
 
@@ -171,7 +171,7 @@ class AccountControllerTest {
       assertNotNull(result);
       assertEquals(HttpStatus.OK, result.getStatusCode());
       assertNotNull(result.getBody());
-      assertEquals("Account deleted successfully", result.getBody().getMessage());
+      assertEquals("Cuenta eliminada satisfactoriamente", result.getBody().getMessage());
       verify(AccountControllerTest.this.deleteAccountUseCase).handle(AccountMother.ACCOUNT_ID);
     }
 

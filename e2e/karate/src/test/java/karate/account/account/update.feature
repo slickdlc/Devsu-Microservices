@@ -11,6 +11,6 @@ Feature: Account Create API
     * def req = read('testdata/update/negative-invalid-id-request.yml')
     * call accountPut req
 
-  Scenario: Positive Case - Account updated successfully
+  Scenario: Positive Case - Cuenta modificada satisfactoriamente
     * def req = read('testdata/update/positive-request.yml')
     * call accountPut req

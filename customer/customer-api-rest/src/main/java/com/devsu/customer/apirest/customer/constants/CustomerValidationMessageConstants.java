@@ -5,24 +5,24 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class CustomerValidationMessageConstants {
 
-  public static final String NAME_IS_REQUIRED_MESSAGE = "Name is required";
+  public static final String NAME_IS_REQUIRED_MESSAGE = "El nombre es obligatorio";
 
-  public static final String GENDER_IS_REQUIRED_MESSAGE = "Gender must be 'F' or 'M'";
+  public static final String GENDER_IS_REQUIRED_MESSAGE = "El género debe ser 'F' o 'M'";
 
-  public static final String NAME_LENGTH_MESSAGE = "Name must be between 1 and 50 characters";
+  public static final String NAME_LENGTH_MESSAGE = "El nombre debe contener entre 1 y 50 caracteres";
 
-  public static final String AGE_MIN_MESSAGE = "Age should not be less than 1";
+  public static final String AGE_MIN_MESSAGE = "La edad no debe ser menor que 1";
 
-  public static final String AGE_MAX_MESSAGE = "Age should not be greater than 100";
+  public static final String AGE_MAX_MESSAGE = "La edad no debe ser mayor que 100";
 
-  public static final String IDENTIFICATION_LENGTH_MESSAGE = "Identification must contain 8 characters";
+  public static final String IDENTIFICATION_LENGTH_MESSAGE = "La identificación debe contener 8 caracteres";
 
-  public static final String ADDRESS_LENGTH_MESSAGE = "Address must contain between 1 and 50 characters";
+  public static final String ADDRESS_LENGTH_MESSAGE = "La dirección debe contener entre 1 y 50 caracteres";
 
-  public static final String PHONE_LENGTH_MESSAGE = "Phone must contain 9 characters";
+  public static final String PHONE_LENGTH_MESSAGE = "El teléfono debe contener 9 caracteres";
 
-  public static final String PASSWORD_LENGTH_MESSAGE = "Password must contain between 8 and 40 characters";
+  public static final String PASSWORD_LENGTH_MESSAGE = "El password debe contener entre 8 y 40 caracteres";
 
-  public static final String ACTIVE_MESSAGE = "Active must be informed";
+  public static final String ACTIVE_MESSAGE = "El campo 'activo' es obligatorio";
 
 }

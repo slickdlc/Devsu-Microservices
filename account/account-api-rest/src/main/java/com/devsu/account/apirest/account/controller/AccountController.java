@@ -32,11 +32,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AccountController extends BaseController {
 
-  private static final String ACCOUNT_CREATED_SUCCESSFULLY = "Account created successfully";
+  private static final String ACCOUNT_CREATED_SUCCESSFULLY = "Cuenta creada satisfactoriamente";
 
-  private static final String ACCOUNT_UPDATED_SUCCESSFULLY = "Account updated successfully";
+  private static final String ACCOUNT_UPDATED_SUCCESSFULLY = "Cuenta modificada satisfactoriamente";
 
-  private static final String ACCOUNT_DELETED_SUCCESSFULLY = "Account deleted successfully";
+  private static final String ACCOUNT_DELETED_SUCCESSFULLY = "Cuenta eliminada satisfactoriamente";
 
   private final CreateAccountUseCase createAccountUseCase;
 

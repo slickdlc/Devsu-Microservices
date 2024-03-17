@@ -10,14 +10,14 @@ public class CustomerRequestDtoMother {
 
   public CustomerRequestDtoBuilder builder() {
     return CustomerRequestDto.builder()
-        .name(CustomerMother.NAME)
-        .gender(CustomerMother.GENDER)
-        .age(CustomerMother.AGE)
-        .identification(CustomerMother.IDENTIFICATION)
-        .address(CustomerMother.ADDRESS)
-        .phone(CustomerMother.PHONE)
-        .password(CustomerMother.PASSWORD)
-        .active(CustomerMother.ACTIVE);
+        .nombre(CustomerMother.NAME)
+        .genero(CustomerMother.GENDER)
+        .edad(CustomerMother.AGE)
+        .identificacion(CustomerMother.IDENTIFICATION)
+        .direccion(CustomerMother.ADDRESS)
+        .telefono(CustomerMother.PHONE)
+        .contrasena(CustomerMother.PASSWORD)
+        .activo(CustomerMother.ACTIVE);
   }
 
   public CustomerRequestDto complete() {
@@ -26,44 +26,44 @@ public class CustomerRequestDtoMother {
 
   public CustomerRequestDto withName(final String name) {
     return builder()
-        .name(name)
+        .nombre(name)
         .build();
   }
 
   public static CustomerRequestDto withAge(final Integer age) {
     return builder()
-        .age(age)
+        .edad(age)
         .build();
   }
 
   public static CustomerRequestDto withIdentification(final String identification) {
     return builder()
-        .identification(identification)
+        .identificacion(identification)
         .build();
   }
 
   public static CustomerRequestDto withAddress(final String address) {
     return builder()
-        .address(address)
+        .direccion(address)
         .build();
   }
 
   public static CustomerRequestDto withPhone(final String phone) {
     return builder()
-        .phone(phone)
+        .telefono(phone)
         .build();
   }
 
   public static CustomerRequestDto withPassword(final String password) {
     return builder()
-        .password(password)
+        .contrasena(password)
         .build();
   }
 
   public static CustomerRequestDto withActive(Boolean active) {
     return builder()
-        .active(active)
+        .activo(active)
         .build();
   }
-  
+
 }

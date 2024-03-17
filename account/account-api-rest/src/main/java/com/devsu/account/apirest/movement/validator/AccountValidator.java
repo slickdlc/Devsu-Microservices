@@ -15,12 +15,12 @@ public class AccountValidator implements ConstraintValidator<ValidAccount, Movem
   }
   
   private boolean isAccountIdValid(MovementRequestDto movementRequestDto) {
-    return movementRequestDto.getAccountId() != null;
+    return movementRequestDto.getCuentaId() != null;
   }
   
   private boolean isAccountNumberValid(MovementRequestDto movementRequestDto) {
-    return movementRequestDto.getAccountNumber() != null &&
-        movementRequestDto.getAccountNumber().length() == 16;
+    return movementRequestDto.getNumeroDeCuenta() != null &&
+        movementRequestDto.getNumeroDeCuenta().length() == 16;
   }
   
 }

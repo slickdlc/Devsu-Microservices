@@ -85,7 +85,7 @@ class MovementControllerTest {
       assertNotNull(result);
       assertEquals(HttpStatus.OK, result.getStatusCode());
       assertNotNull(result.getBody());
-      assertEquals("Movement added successfully", result.getBody().getMessage());
+      assertEquals("Movimiento añadido satisfactoriamente", result.getBody().getMessage());
       verify(MovementControllerTest.this.addMovementUseCase).handle(any());
     }
 

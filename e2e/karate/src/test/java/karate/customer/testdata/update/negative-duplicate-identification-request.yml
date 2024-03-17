@@ -11,5 +11,5 @@ body: {
 }
 statusCode: 400
 expectedResponse: {
-  "message": "Customer with identification [71717171] already exists"
+  "message": "El cliente con identificacion [71717171] ya existe"
 }

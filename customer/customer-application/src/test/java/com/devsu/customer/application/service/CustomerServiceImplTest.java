@@ -36,7 +36,7 @@ class CustomerServiceImplTest {
     void given_customerWithId_when_createCustomer_then_expectedException() {
       final var customer = CustomerMother.complete();
 
-      assertThrows(ServiceException.class, () -> CustomerServiceImplTest.this.customerService.createCustomer(customer));
+      assertThrows(IllegalArgumentException.class, () -> CustomerServiceImplTest.this.customerService.createCustomer(customer));
 
       verify(CustomerServiceImplTest.this.customerRepository, never()).findCustomerByIdentification(customer.getIdentification());
       verify(CustomerServiceImplTest.this.customerRepository, never()).saveCustomer(customer);

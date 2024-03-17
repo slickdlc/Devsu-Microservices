@@ -11,10 +11,10 @@ public class CustomerDtoMother {
 
   public static CustomerDto.CustomerDtoBuilder builder() {
     return CustomerDto.builder()
-        .customerId(CustomerMother.CUSTOMER_ID)
-        .name(CustomerMother.CUSTOMER_NAME)
-        .identification(CustomerMother.CUSTOMER_IDENTIFICATION)
-        .active(CustomerDtoMother.ACTIVE);
+        .clienteId(CustomerMother.CUSTOMER_ID)
+        .nombre(CustomerMother.CUSTOMER_NAME)
+        .identificacion(CustomerMother.CUSTOMER_IDENTIFICATION)
+        .activo(CustomerDtoMother.ACTIVE);
   }
 
   public static CustomerDto complete() {
@@ -22,6 +22,6 @@ public class CustomerDtoMother {
   }
 
   public static CustomerDto withActive(boolean active) {
-    return builder().active(active).build();
+    return builder().activo(active).build();
   }
 }
